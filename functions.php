@@ -34,6 +34,7 @@ require_once GROZOMART_CLASSES . '/class-assets.php';
 require_once GROZOMART_CLASSES . '/class-post-helper.php';
 require_once GROZOMART_CLASSES . '/class-comment-walker.php';
 require_once GROZOMART_CLASSES . '/class-nav-walker.php';
+require_once GROZOMART_CLASSES . '/class-nav-walker-submenu.php';
 require_once GROZOMART_CLASSES . '/class-breadcrumb.php';
 require_once GROZOMART_CLASSES . '/class-woocommerce.php';
 require_once GROZOMART_ADMIN . '/class-admin-panel.php';

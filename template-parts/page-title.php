@@ -164,7 +164,7 @@ $breadcrumb_items[] = ['label' => implode('', $title_output)];
  */
 $grozomart_render_breadcrumb = function ($list_class, $wow_delay = '') use ($breadcrumb_items) {
 ?>
-	<ul class="<?php echo esc_attr($list_class); ?> wow fadeInUp" <?php echo $wow_delay ? 'data-wow-delay="' . esc_attr($wow_delay) . '"' : ''; ?>>
+	<ul class="<?php echo esc_attr($list_class); ?> wow fadeInUp" <?php if ($wow_delay) : ?>data-wow-delay="<?php echo esc_attr($wow_delay); ?>"<?php endif; ?>>
 		<?php foreach ($breadcrumb_items as $index => $breadcrumb_item) : ?>
 			<?php if ($index > 0) : ?>
 				<li>/</li>

@@ -97,16 +97,22 @@ class Grozomart_Assets
 
 		wp_register_style('meanmenu', GROZOMART_VENDOR . '/meanmenu/meanmenu.css', [], '1.1.0');
 		wp_register_script('meanmenu', GROZOMART_VENDOR . '/meanmenu/jquery.meanmenu.min.js', ['jquery'], '1.1.0', true);
+
+		wp_register_style('grozomart-tiktok-sans-font', 'https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap', [], null);
 	}
 
 	public function enqueue_styles()
 	{
 		wp_enqueue_style('grozomart-fonts', $this->google_font_url(), [], null);
+		// TikTok Sans is the theme's base body font (assets/css/style.css uses
+		// it throughout); previously loaded via @import inside that file. See
+		// register_scripts() above for why it's registered as its own handle.
+		wp_enqueue_style('grozomart-tiktok-sans-font');
 		wp_enqueue_style('bootstrap');
 		wp_enqueue_style('fontawesome', GROZOMART_VENDOR . '/fontawesome/all.min.css', [], '6.7');
 		wp_enqueue_style('animate');
 		wp_enqueue_style('meanmenu');
-		wp_enqueue_style('grozomart-theme', GROZOMART_ASSETS . '/css/style.css', [], GROZOMART_VERSION);
+		wp_enqueue_style('grozomart-theme', GROZOMART_ASSETS . '/css/style.css', ['grozomart-tiktok-sans-font'], GROZOMART_VERSION);
 		wp_enqueue_style('grozomart-style', get_stylesheet_uri(), [], GROZOMART_VERSION);
 	}
 

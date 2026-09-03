@@ -17,7 +17,9 @@ Version: 1.0.0
 /*---------------------------------------
 01. Mixins & Variables
 ---------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
+/* TikTok Sans is enqueued via wp_enqueue_style() in class-assets.php
+   (grozomart-tiktok-sans-font), not @import — see Theme Check: @import
+   blocks CSS parsing until it resolves and can't be filtered/dequeued. */
 
 :root {
   --body: #fff;

@@ -18,7 +18,7 @@ class Grozomart_Post_Helper
 	{
 		$categories = get_the_category();
 	?>
-		<ul<?php echo $list_class ? ' class="' . esc_attr($list_class) . '"' : ''; ?>>
+		<ul<?php if ($list_class) : ?> class="<?php echo esc_attr($list_class); ?>"<?php endif; ?>>
 			<?php if (! empty($categories)) : ?>
 				<li><?php echo esc_html($categories[0]->name); ?></li>
 				<li>।</li>

@@ -13,7 +13,7 @@
  */
 
 use GrozomartTheme\Classes\Grozomart_Helper as Helper;
-use GrozomartTheme\Classes\Grozomart_Nav_Walker;
+use GrozomartTheme\Classes\Grozomart_Nav_Walker_Submenu;
 
 $site_logo_type  = Helper::get_option('site_logo_type', 'image');
 $site_text_logo  = Helper::get_option('site_text_logo', get_bloginfo('name'));
@@ -107,13 +107,10 @@ $grozomart_site_logo = function () use ($site_logo_type, $site_text_logo, $site_
                     </div>
                 </div>
                 <div class="mobile-menu fix"></div>
-                <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-                    <input type="text" name="s" value="<?php echo esc_attr(get_search_query()); ?>" placeholder="<?php esc_attr_e('Search for products....', 'grozomart'); ?>">
-                    <?php if (function_exists('WC')) : ?>
-                        <input type="hidden" name="post_type" value="product">
-                    <?php endif; ?>
-                    <button type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
-                </form>
+                <?php
+                $with_category_select = false;
+                get_template_part('template-parts/header/header-search-form', null, ['with_category_select' => $with_category_select]);
+                ?>
                 <?php if (function_exists('WC')) {
                     $grozomart_shop_icons();
                 } ?>
@@ -128,27 +125,10 @@ $grozomart_site_logo = function () use ($site_logo_type, $site_text_logo, $site_
     <div class="container">
         <div class="middle-wrap-items">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="logo"><?php $grozomart_site_logo(); ?></a>
-            <form class="search-box" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-                <?php if (! empty($product_categories)) : ?>
-                    <div class="category-select">
-                        <select class="single-select price-list w-100" name="product_cat">
-                            <option value=""><?php esc_html_e('All type', 'grozomart'); ?></option>
-                            <?php foreach ($product_categories as $product_category) : ?>
-                                <option value="<?php echo esc_attr($product_category->slug); ?>"><?php echo esc_html($product_category->name); ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                <?php endif; ?>
-
-                <input type="text" name="s" value="<?php echo esc_attr(get_search_query()); ?>" placeholder="<?php esc_attr_e('Search for products....', 'grozomart'); ?>">
-                <?php if (function_exists('WC')) : ?>
-                    <input type="hidden" name="post_type" value="product">
-                <?php endif; ?>
-
-                <button class="search-btn" type="submit">
-                    <i class="fa-regular fa-magnifying-glass"></i>
-                </button>
-            </form>
+            <?php
+            $with_category_select = true;
+            get_template_part('template-parts/header/header-search-form', null, ['with_category_select' => $with_category_select, 'product_categories' => $product_categories]);
+            ?>
             <div class="icon-right-wrap">
                 <?php if (function_exists('WC')) {
                     $grozomart_shop_icons();
@@ -171,36 +151,21 @@ $grozomart_site_logo = function () use ($site_logo_type, $site_text_logo, $site_
                             <nav id="mobile-menu">
                                 <?php
                                 /**
-                                 * Grozomart_Nav_Walker inherits core's start_lvl(), which
-                                 * emits `.sub-menu`; this design's CSS targets `.submenu`.
-                                 * It also has no chevron indicator. Patch both for just
-                                 * this menu rather than editing the shared walker.
+                                 * Grozomart_Nav_Walker_Submenu overrides start_lvl() (emits
+                                 * `.submenu` instead of core's default `.sub-menu`, which this
+                                 * design's CSS targets) and start_el() (adds a chevron icon to
+                                 * items with children) — scoped to this one call by
+                                 * subclassing rather than by adding/removing filters.
                                  */
-                                $grozomart_submenu_class_filter = function ($classes) {
-                                    return array_merge(array_values(array_diff($classes, ['sub-menu'])), ['submenu']);
-                                };
-                                add_filter('nav_menu_submenu_css_class', $grozomart_submenu_class_filter);
-
-                                $grozomart_menu_chevron_filter = function ($title, $item) {
-                                    if (in_array('menu-item-has-children', $item->classes, true)) {
-                                        $title .= ' <i class="fa-solid fa-chevron-down"></i>';
-                                    }
-                                    return $title;
-                                };
-                                add_filter('nav_menu_item_title', $grozomart_menu_chevron_filter, 10, 2);
-
                                 wp_nav_menu(
                                     [
                                         'theme_location' => 'primary_menu',
                                         'container'      => false,
                                         'items_wrap'     => '<ul>%3$s</ul>',
                                         'fallback_cb'    => false,
-                                        'walker'         => new Grozomart_Nav_Walker(),
+                                        'walker'         => new Grozomart_Nav_Walker_Submenu(),
                                     ]
                                 );
-
-                                remove_filter('nav_menu_submenu_css_class', $grozomart_submenu_class_filter);
-                                remove_filter('nav_menu_item_title', $grozomart_menu_chevron_filter, 10);
                                 ?>
                             </nav>
                         </div>

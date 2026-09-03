@@ -163,7 +163,7 @@ class Grozomart_Woocommerce
 				</h4>
 				<div class="product-cat-rating">
 					<div class="categories">
-						<?php echo wc_get_product_category_list(get_the_ID(), ', ', __('In ', 'ridda')) ?>
+						<?php echo wc_get_product_category_list(get_the_ID(), ', ', __('In ', 'grozomart')) ?>
 					</div>
 				</div>
 				<div class="product-price-button">
@@ -255,7 +255,7 @@ class Grozomart_Woocommerce
 	?>
 		<div class="widget_shopping_cart">
 			<div class="widget_shopping_title">
-				<?php echo esc_html__('Shopping Cart', 'ridda'); ?> <span class="widget_cart_counter">(<?php echo sprintf(_n('%d item', '%d items', WC()->cart->cart_contents_count, 'ridda'), WC()->cart->cart_contents_count); ?>)</span>
+				<?php echo esc_html__('Shopping Cart', 'grozomart'); ?> <span class="widget_cart_counter">(<?php echo sprintf(_n('%d item', '%d items', WC()->cart->cart_contents_count, 'grozomart'), WC()->cart->cart_contents_count); ?>)</span>
 			</div>
 			<div class="widget_shopping_cart_content">
 				<?php $cart_is_empty = sizeof($woocommerce->cart->get_cart()) <= 0; ?>
@@ -285,7 +285,7 @@ class Grozomart_Woocommerce
 										echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
 											'<a href="%s" class="remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="fal fa-times-circle"></i></a>',
 											esc_url(wc_get_cart_remove_url($cart_item_key)),
-											esc_attr__('Remove this item', 'ridda'),
+											esc_attr__('Remove this item', 'grozomart'),
 											esc_attr($product_id),
 											esc_attr($cart_item_key),
 											esc_attr($_product->get_sku())
@@ -299,21 +299,21 @@ class Grozomart_Woocommerce
 						?>
 					<?php else: ?>
 						<li class="empty">
-							<span><?php esc_html_e('Your cart is empty', 'ridda'); ?></span>
-							<a class="cart-btn" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>"><?php echo esc_html__('Browse Shop', 'ridda'); ?></a>
+							<span><?php esc_html_e('Your cart is empty', 'grozomart'); ?></span>
+							<a class="cart-btn" href="<?php echo get_permalink(wc_get_page_id('shop')); ?>"><?php echo esc_html__('Browse Shop', 'grozomart'); ?></a>
 						</li>
 					<?php endif; ?>
 				</ul><!-- end product list -->
 			</div>
 			<?php if (! WC()->cart->is_empty()): ?>
 				<div class="widget_shopping_cart_footer">
-					<p class="total"><strong><?php esc_html_e('Subtotal', 'ridda'); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+					<p class="total"><strong><?php esc_html_e('Subtotal', 'grozomart'); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 					<?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 
 					<p class="buttons">
-						<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cart-btn wc-forward"><?php esc_html_e('View Cart', 'ridda'); ?></a>
-						<a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="cart-btn checkout wc-forward"><?php esc_html_e('Checkout', 'ridda'); ?></a>
+						<a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="cart-btn wc-forward"><?php esc_html_e('View Cart', 'grozomart'); ?></a>
+						<a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="cart-btn checkout wc-forward"><?php esc_html_e('Checkout', 'grozomart'); ?></a>
 					</p>
 				</div>
 			<?php endif; ?>
