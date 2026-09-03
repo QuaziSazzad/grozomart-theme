@@ -27,7 +27,7 @@ use GrozomartTheme\Classes\Grozomart_Woocommerce as Grozomart_Woocommerce;
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<div id="tekprof-page" class="tekprof-body-content">
+	<div id="grozomart-page" class="grozomart-body-content">
 		<?php
 		if ('enabled' === Helper::get_option('site_preloader', 'enabled')) {
 			get_template_part('template-parts/preloader');
@@ -45,5 +45,5 @@ use GrozomartTheme\Classes\Grozomart_Woocommerce as Grozomart_Woocommerce;
 			Grozomart_Woocommerce::mini_cart_sidebar();
 		}
 		?>
-		<main id="tekprof-content" class="tekprof-content-area">
+		<main id="grozomart-content" class="grozomart-content-area">
 			<?php get_template_part('template-parts/page-title'); ?>

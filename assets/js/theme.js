@@ -566,9 +566,14 @@
      /* ================================
        Preloader Js Start
     ================================ */
-    $windowOn.on('load', function() {
+    // Hide on load, but also fall back to a timeout: if any asset stalls,
+    // `load` may never fire and the overlay would cover the page forever.
+    function hidePreloader() {
         $(".preloader").fadeOut(600);
-    });
+    }
+
+    $windowOn.on('load', hidePreloader);
+    setTimeout(hidePreloader, 5000);
 
 
   })(jQuery); // End jQuery

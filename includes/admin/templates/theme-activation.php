@@ -20,14 +20,14 @@ $allowed_html = [
 
 $theme_data = Grozomart_Helper::is_theme_active();
 ?>
-<div class="tekprof-dashboard-pages tekprof-theme-activation-page">
-    <div class="tekprof-activation-wrapper">
+<div class="grozomart-dashboard-pages grozomart-theme-activation-page">
+    <div class="grozomart-activation-wrapper">
         <div class="activation-form-wrap">
             <?php if (! $theme_data['theme_active']): ?>
                 <div class="activation-form">
                     <h4><?php esc_html_e('Activate your license', 'grozomart'); ?></h4>
                     <p><?php esc_html_e('Please activate your license to get access to pre-build design', 'grozomart'); ?></p>
-                    <form class="tekprof-activation" action="<?php echo esc_url(admin_url('admin.php?page=grozomart_theme_activation')); ?>" method="post">
+                    <form class="grozomart-activation" action="<?php echo esc_url(admin_url('admin.php?page=grozomart_theme_activation')); ?>" method="post">
                         <div class="from-fields">
                             <input type="text" placeholder="<?php esc_attr_e('Enter Your Purchase Code', 'grozomart'); ?>" name="purchase_code" required />
                             <input type="text" placeholder="<?php esc_attr_e('Your Envato Username', 'grozomart'); ?>" name="username" required />
@@ -48,7 +48,7 @@ $theme_data = Grozomart_Helper::is_theme_active();
                             <?php esc_html_e('Your theme\'s license is activated successfully.', 'grozomart'); ?>
                         </h3>
                     </div>
-                    <form class="tekprof-deactivation" action="<?php echo esc_url(admin_url('admin.php?page=grozomart_theme_activation')); ?>" method="post">
+                    <form class="grozomart-deactivation" action="<?php echo esc_url(admin_url('admin.php?page=grozomart_theme_activation')); ?>" method="post">
                         <input type="hidden" name="token" value="<?php echo esc_attr($theme_data['token']) ?>">
                         <?php wp_nonce_field('theme-deactivation', 'deactivation_nonce'); ?>
                         <button type="submit" class="deactivate-license" value="submit">

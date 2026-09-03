@@ -16,8 +16,8 @@ $allowed_html = [
 ];
 
 ?>
-<div class="tekprof-dashboard-pages tekprof-helper-center-page">
-    <div class="tekprof-help-boxes">
+<div class="grozomart-dashboard-pages grozomart-helper-center-page">
+    <div class="grozomart-help-boxes">
         <div class="help-box doc-box" style="background-image: url( <?php echo GROZOMART_ASSETS . '/img/doc-bg.jpg' ?> );">
             <div class="img">
                 <img src="<?php echo esc_url(GROZOMART_ASSETS . '/img/doc-img.png') ?>" alt="<?php esc_attr_e('Documentation', 'grozomart') ?>">

@@ -39,7 +39,7 @@ class Grozomart_Breadcrumb
 		$post_page_title = get_option('page_for_posts');
 
 		// Fixed condition to always show breadcrumb
-		$html_markup .= '<div class="tekprof-breadcrumb wt-breadcrumb-body wt-breadcrumb-body details-body">';
+		$html_markup .= '<div class="grozomart-breadcrumb wt-breadcrumb-body wt-breadcrumb-body details-body">';
 
 		// Check if we're on home/front page
 		if (is_home() && !is_paged() || is_front_page() && !is_paged()) {

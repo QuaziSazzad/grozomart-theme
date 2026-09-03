@@ -20,7 +20,7 @@ $default_copyright = sprintf(
 $copyright = Helper::get_option('copyright_text', $default_copyright);
 ?>
 
-<footer class="tekprof-site-footer default-footer text-center">
+<footer class="grozomart-site-footer default-footer text-center">
     <div class="container">
         <div class="footer-copyright">
             <p>

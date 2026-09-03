@@ -90,8 +90,8 @@ class Grozomart_Admin_Panel
 		}
 
 		if (! empty($menu_items)): ?>
-			<div class="wrap tekprof-dashboard-header">
-				<div class="tekprof-dashboard-banner" style="background-image: url( <?php echo GROZOMART_ASSETS . '/img/dashboard-banner.jpg' ?> );">
+			<div class="wrap grozomart-dashboard-header">
+				<div class="grozomart-dashboard-banner" style="background-image: url( <?php echo GROZOMART_ASSETS . '/img/dashboard-banner.jpg' ?> );">
 					<h3><?php echo esc_html__('Thanks For Purchasing', 'grozomart') . ' ' . GROZOMART_NAME ?></h3>
 					<p>
 						<?php echo sprintf(

@@ -261,43 +261,43 @@ class Grozomart_Helper
 		$light_neutral   = self::get_option('light_neutral', '');
 
 		$colors['_primary'] = [
-			'slug'  => 'tekprof-primary-color',
+			'slug'  => 'grozomart-primary-color',
 			'title' => esc_html__('Primary', 'grozomart'),
 			'value' => ! empty($primary_color) ? $primary_color : '#FC5546',
 		];
 
 		$colors['_secondary'] = [
-			'slug'  => 'tekprof-secondary-color',
+			'slug'  => 'grozomart-secondary-color',
 			'title' => esc_html__('Secondary', 'grozomart'),
 			'value' => ! empty($secondary_color) ? $secondary_color : '#021433',
 		];
 
 		$colors['_blue'] = [
-			'slug'  => 'tekprof-blue-color',
+			'slug'  => 'grozomart-blue-color',
 			'title' => esc_html__('Blue', 'grozomart'),
 			'value' => ! empty($blue_color) ? $secondary_color : '#021433',
 		];
 
 		$colors['_body'] = [
-			'slug'  => 'tekprof-body-color',
+			'slug'  => 'grozomart-body-color',
 			'title' => esc_html__('Body', 'grozomart'),
 			'value' => ! empty($body_color) ? $body_color : '#5B5B5B',
 		];
 
 		$colors['_heading'] = [
-			'slug'  => 'tekprof-heading-color',
+			'slug'  => 'grozomart-heading-color',
 			'title' => esc_html__('Headline', 'grozomart'),
 			'value' => ! empty($heading_color) ? $heading_color : '#0B0C0C',
 		];
 
 		$colors['_gray'] = [
-			'slug'  => 'tekprof-gray-color',
+			'slug'  => 'grozomart-gray-color',
 			'title' => esc_html__('Gray', 'grozomart'),
 			'value' => ! empty($gray_color) ? $gray_color : '#F3F6F9',
 		];
 
 		$colors['_light'] = [
-			'slug'  => 'tekprof-light-neutral',
+			'slug'  => 'grozomart-light-neutral',
 			'title' => esc_html__('Light', 'grozomart'),
 			'value' => ! empty($light_neutral) ? $light_neutral : '#F3F6F9',
 		];
@@ -327,43 +327,43 @@ class Grozomart_Helper
 		$light_neutral   = self::get_meta('grozomart_page_meta', 'light_neutral', '');
 
 		$colors['_primary'] = [
-			'slug'  => 'tekprof-primary-color',
+			'slug'  => 'grozomart-primary-color',
 			'title' => esc_html__('Primary', 'grozomart'),
 			'value' => ! empty($primary_color) ? $primary_color : '#FC5546',
 		];
 
 		$colors['_secondary'] = [
-			'slug'  => 'tekprof-secondary-color',
+			'slug'  => 'grozomart-secondary-color',
 			'title' => esc_html__('Secondary', 'grozomart'),
 			'value' => ! empty($secondary_color) ? $secondary_color : '#021433',
 		];
 
 		$colors['_blue'] = [
-			'slug'  => 'tekprof-blue-color',
+			'slug'  => 'grozomart-blue-color',
 			'title' => esc_html__('blue', 'grozomart'),
 			'value' => ! empty($blue_color) ? $blue_color : '#021433',
 		];
 
 		$colors['_body'] = [
-			'slug'  => 'tekprof-body-color',
+			'slug'  => 'grozomart-body-color',
 			'title' => esc_html__('Body', 'grozomart'),
 			'value' => ! empty($body_color) ? $body_color : '#5B5B5B',
 		];
 
 		$colors['_heading'] = [
-			'slug'  => 'tekprof-heading-color',
+			'slug'  => 'grozomart-heading-color',
 			'title' => esc_html__('Headline', 'grozomart'),
 			'value' => ! empty($heading_color) ? $heading_color : '#0B0C0C',
 		];
 
 		$colors['_gray'] = [
-			'slug'  => 'tekprof-gray-color',
+			'slug'  => 'grozomart-gray-color',
 			'title' => esc_html__('Gray', 'grozomart'),
 			'value' => ! empty($gray_color) ? $gray_color : '#F3F6F9',
 		];
 
 		$colors['_light'] = [
-			'slug'  => 'tekprof-light-neutral',
+			'slug'  => 'grozomart-light-neutral',
 			'title' => esc_html__('Light', 'grozomart'),
 			'value' => ! empty($light_neutral) ? $light_neutral : '#F3F6F9',
 		];
@@ -378,12 +378,12 @@ class Grozomart_Helper
 	{
 		$fonts = [
 			'_primary'   => [
-				'slug'               => 'tekprof-base-font',
+				'slug'               => 'grozomart-base-font',
 				'font-family'        => 'Inter',
 				'backup-font-family' => 'sans-serif'
 			],
 			'_secondary' => [
-				'slug'               => 'tekprof-heading-font',
+				'slug'               => 'grozomart-heading-font',
 				'font-family'        => 'Hanken Grotesk',
 				'backup-font-family' => 'sans-serif'
 			],
@@ -429,12 +429,12 @@ class Grozomart_Helper
 
 		$fonts = [
 			'_primary'   => [
-				'slug'               => 'tekprof-base-font',
+				'slug'               => 'grozomart-base-font',
 				'font-family'        => 'Inter',
 				'backup-font-family' => 'sans-serif'
 			],
 			'_secondary' => [
-				'slug'               => 'tekprof-heading-font',
+				'slug'               => 'grozomart-heading-font',
 				'font-family'        => 'Hanken Grotesk',
 				'backup-font-family' => 'sans-serif'
 			],

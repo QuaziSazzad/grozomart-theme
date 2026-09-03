@@ -15,7 +15,7 @@ Text Domain: grozomart
 
 /* unit test start */
 
-.tekprof-pagination {
+.grozomart-pagination {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -32,9 +32,9 @@ Text Domain: grozomart
 	box-shadow: none;
 	font-weight: 600;
 	line-height: 50px;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	border-radius: 50px;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	text-align: center;
 }
 
@@ -42,7 +42,7 @@ Text Domain: grozomart
 .pagination li span {
 	position: relative;
 	display: block;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	text-decoration: none;
 	background-color: #fff;
 	border: 1px solid #dee2e6;
@@ -53,8 +53,8 @@ Text Domain: grozomart
 .pagination li span:not(.dots),
 .pagination li:hover:not(.disabled) a {
 	color: #fff;
-	background: var(--tekprof-heading-color);
-	border-color: var(--tekprof-heading-color);
+	background: var(--grozomart-heading-color);
+	border-color: var(--grozomart-heading-color);
 }
 
 .pagination li a i,
@@ -70,7 +70,7 @@ Text Domain: grozomart
 }
 
 .comment-reply-link {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: 600;
 }
 
@@ -79,13 +79,13 @@ Text Domain: grozomart
 	margin-bottom: 30px;
 }
 
-.tekprof-site-footer.default-footer {
-	background: var(--tekprof-blue-color);
+.grozomart-site-footer.default-footer {
+	background: var(--grozomart-blue-color);
 	color: #fff;
 	height: 100px;
 }
 
-.tekprof-site-footer.default-footer p {
+.grozomart-site-footer.default-footer p {
 	padding: 30px 0;
 }
 
@@ -93,8 +93,8 @@ Text Domain: grozomart
 	font-weight: 500;
 }
 
-.widget_search .tekprof-search-form input[type=search] {
-	border: 1px solid var(--tekprof-border-color);
+.widget_search .grozomart-search-form input[type=search] {
+	border: 1px solid var(--grozomart-border-color);
 	height: 60px;
 }
 
@@ -114,7 +114,7 @@ Text Domain: grozomart
 	content: "";
 	width: 40px;
 	height: 40px;
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	z-index: 10;
 	clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 50%, 0 100%, 0 0);
 	top: 0px;
@@ -155,7 +155,7 @@ ul.wp-block-page-list {
 	align-items: center;
 	justify-content: center;
 	line-height: 1;
-	border: 1px solid var(--tekprof-border-color, #F2F2F2);
+	border: 1px solid var(--grozomart-border-color, #F2F2F2);
 	color: #fff;
 	width: 40px;
 	height: 40px;
@@ -168,7 +168,7 @@ ul.wp-block-page-list {
 }
 
 .wp-block-query-pagination-numbers .dots {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .wp-block-query-pagination .wp-block-query-pagination-numbers .dots:hover {
@@ -178,9 +178,9 @@ ul.wp-block-page-list {
 .wp-block-query-pagination-numbers .current:hover,
 .wp-block-query-pagination-numbers .dots:hover,
 .wp-block-query-pagination-numbers a:hover {
-	border: 1px solid var(--tekprof-heading-color);
-	color: var(--tekprof-heading-color, #141414);
-	background-color: var(--tekprof-heading-color);
+	border: 1px solid var(--grozomart-heading-color);
+	color: var(--grozomart-heading-color, #141414);
+	background-color: var(--grozomart-heading-color);
 }
 
 .wp-block-query-pagination-numbers .current.next,
@@ -193,8 +193,8 @@ ul.wp-block-page-list {
 }
 
 .wp-block-query-pagination-numbers .current {
-	background-color: var(--tekprof-heading-color);
-	border-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
+	border-color: var(--grozomart-heading-color);
 	color: #fff;
 }
 
@@ -202,8 +202,8 @@ ul.wp-block-page-list {
 	display: block;
 	width: 100%;
 	height: 188px;
-	background-color: var(--tekprof-lighter-color, #F7F8FE);
-	color: var(--tekprof-text, #838184);
+	background-color: var(--grozomart-lighter-color, #F7F8FE);
+	color: var(--grozomart-text, #838184);
 	font-size: 14px;
 	font-weight: 500;
 	border: none;
@@ -221,11 +221,11 @@ ul.wp-block-page-list {
 	appearance: none;
 	border: none;
 	outline: none !important;
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 	font-size: 16px;
 	font-weight: 700;
-	font-family: var(--tekprof-heading-color-font);
+	font-family: var(--grozomart-heading-color-font);
 	padding: 12px 20px;
 	transition: 500ms;
 	overflow: hidden;
@@ -269,13 +269,13 @@ p.form-submit {
 
 .wp-block-categories-list li a,
 .wp-block-archives-list li a {
-	color: var(--tekprof-text);
+	color: var(--grozomart-text);
 	transition: all 500ms ease;
 }
 
 .wp-block-categories-list li a:hover,
 .wp-block-archives-list li a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .blog-details-content ul.wp-block-social-links,
@@ -298,7 +298,7 @@ ul.wp-block-rss.wp-block-rss {
 	padding-left: 68px;
 	font-size: 16px;
 	font-weight: 500;
-	color: var(--tekprof-base-color);
+	color: var(--grozomart-base-color);
 	min-height: 44px;
 }
 
@@ -321,7 +321,7 @@ ul.wp-block-rss.wp-block-rss {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 	width: 44px;
 	height: 44px;
 	color: #fff;
@@ -338,20 +338,20 @@ ul.wp-block-rss.wp-block-rss {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 24px;
-	font-family: var(--tekprof-heading-font, "Cormorant", serif);
+	font-family: var(--grozomart-heading-font, "Cormorant", serif);
 	text-transform: capitalize;
 }
 
 .blog-details-content a,
 .comment-content a,
 .blog-details-content blockquote:not([class*=has-]) cite {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .blog-details-content a:hover,
 .comment-content a:hover,
 .blog-details-content blockquote:not([class*=has-]) cite:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .blog-details-content .project-tags a:hover {
@@ -368,14 +368,14 @@ ul.wp-block-rss.wp-block-rss {
 	line-height: 40px;
 	padding: 19px 80px 19px 35px;
 	background: #FAF8F6;
-	color: var(--tekprof-gray, #717178);
+	color: var(--grozomart-gray, #717178);
 	display: block;
 	font-size: 14px;
 	font-weight: 500;
-	font-family: var(--tekprof-font, "Kumbh Sans", sans-serif);
+	font-family: var(--grozomart-font, "Kumbh Sans", sans-serif);
 	width: 100%;
 	height: 60px;
-	border: 1px solid var(--tekprof-extra, #f2eeeb);
+	border: 1px solid var(--grozomart-extra, #f2eeeb);
 	transition: all 500ms ease;
 	-moz-transition: all 500ms ease;
 	-webkit-transition: all 500ms ease;
@@ -410,7 +410,7 @@ ul.wp-block-rss.wp-block-rss {
 .blog-details-content .wp-block-search .wp-block-search__button:hover,
 .sidebar .widget .wp-block-search .wp-block-search__button:hover,
 .sidebar__single .wp-block-search .wp-block-search__button:hover {
-	background-color: var(--tekprof-primary-color, #AE8F62);
+	background-color: var(--grozomart-primary-color, #AE8F62);
 	color: #fff;
 	fill: #fff;
 }
@@ -418,24 +418,24 @@ ul.wp-block-rss.wp-block-rss {
 
 .wp-block-search label {
 	font-size: 18px;
-	color: var(--tekprof-heading-color, #1e1e22);
+	color: var(--grozomart-heading-color, #1e1e22);
 }
 
 .wp-block-tag-cloud a {
 	font-size: 18px !important;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	display: inline-block;
 	vertical-align: middle;
 	transition: all 500ms ease;
 	font-weight: 300;
-	font-family: var(--tekprof-font);
+	font-family: var(--grozomart-font);
 	border-radius: 7px;
 }
 
 .wp-block-tag-cloud a:hover,
 .tagcloud a:hover {
 	color: #fff;
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 }
 
 .wp-block-tag-cloud a {
@@ -447,12 +447,12 @@ ul.wp-block-rss.wp-block-rss {
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover {
-	border-color: var(--tekprof-primary-color);
+	border-color: var(--grozomart-primary-color);
 	color: #fff;
 }
 
 .wp-block-buttons .wp-block-button__link:hover {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 }
 
@@ -461,7 +461,7 @@ ul.wp-block-rss.wp-block-rss {
 }
 
 .blog-details-content .page-links {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	display: flex;
 	align-items: center;
 }
@@ -476,7 +476,7 @@ ul.wp-block-rss.wp-block-rss {
 	display: flex;
 	width: 40px;
 	height: 40px;
-	color: var(--tekprof-text);
+	color: var(--grozomart-text);
 	align-items: center;
 	justify-content: center;
 	text-align: center;
@@ -487,16 +487,16 @@ ul.wp-block-rss.wp-block-rss {
 	border-radius: 50%;
 	line-height: 1;
 	transition: all 500ms ease;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 }
 
 .blog-details-content .page-links span {
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 	color: #fff;
 }
 
 .blog-details-content .page-links a:hover {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 	border: none;
 }
@@ -514,7 +514,7 @@ ul.wp-block-rss.wp-block-rss {
 }
 
 .wp-block-file__button {
-	background: var(--tekprof-primary-color);
+	background: var(--grozomart-primary-color);
 	color: #fff !important;
 	text-decoration: none;
 	padding: 6px 20px;
@@ -523,7 +523,7 @@ ul.wp-block-rss.wp-block-rss {
 }
 
 .wp-block-file__button:hover {
-	background: var(--tekprof-heading-color);
+	background: var(--grozomart-heading-color);
 	color: #fff !important;
 	text-decoration: none;
 }
@@ -532,7 +532,7 @@ ul.wp-block-rss.wp-block-rss {
 .comment-content blockquote,
 .blog-details-content .wp-block-quote {
 	background-color: #FAF8F6;
-	border-left: 2px solid var(--tekprof-heading-color, #1e1e22);
+	border-left: 2px solid var(--grozomart-heading-color, #1e1e22);
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 20px;
@@ -555,7 +555,7 @@ ul.wp-block-rss.wp-block-rss {
 	bottom: 0;
 	transform: rotate(180deg);
 	font-size: 100px;
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	opacity: 0.4;
 	right: 30px;
 	line-height: .9em;
@@ -586,9 +586,9 @@ pre {
 }
 
 .blog-details-content .wp-block-button a:hover {
-	background-color: var(--tekprof-primary-color);
-	border-color: var(--tekprof-primary-color);
-	color: var(--tekprof-heading-color, #141414);
+	background-color: var(--grozomart-primary-color);
+	border-color: var(--grozomart-primary-color);
+	color: var(--grozomart-heading-color, #141414);
 }
 
 .wp-block-cover-text a,
@@ -627,16 +627,16 @@ pre {
 	width: 100%;
 	height: 60px;
 	background-color: #FAF8F6;
-	border: 1px solid var(--tekprof-border-color, #F2F2F2);
+	border: 1px solid var(--grozomart-border-color, #F2F2F2);
 	outline: none;
-	color: var(--tekprof-color, #717178);
+	color: var(--grozomart-color, #717178);
 	font-size: 16px;
 	font-weight: 500;
 	padding-left: 30px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	font-family: var(--tekprof-font, "Kumbh Sans", sans-serif);
+	font-family: var(--grozomart-font, "Kumbh Sans", sans-serif);
 	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><path fill="rgb(34, 36, 41)" d="M540.1 776.847l472.32-473.63c15.466-15.518 15.44-40.642-0.080-56.134-15.518-15.48-40.656-15.44-56.134 0.080l-444.208 445.438-444.206-445.454c-15.48-15.518-40.602-15.558-56.122-0.080-7.78 7.766-11.67 17.94-11.67 28.114 0 10.148 3.864 20.282 11.59 28.034l472.308 473.632c7.436 7.474 17.556 11.668 28.1 11.668s20.652-4.206 28.102-11.668z"></path></svg>');
 	background-repeat: no-repeat;
 	background-position: right 30px top 50%;
@@ -648,8 +648,8 @@ pre {
 .blog-details-content .post-password-form input[type=password] {
 	width: 200px;
 	height: 60px;
-	background-color: var(--tekprof-border-color, #F2F2F2);
-	color: var(--tekprof-heading-color, #717178);
+	background-color: var(--grozomart-border-color, #F2F2F2);
+	color: var(--grozomart-heading-color, #717178);
 	padding-left: 30px;
 	display: inline-block;
 	vertical-align: middle;
@@ -658,7 +658,7 @@ pre {
 .blog-details-content .post-password-form input[type=submit] {
 	width: 120px;
 	height: 60px;
-	background-color: var(--tekprof-primary-color, #1e1e22);
+	background-color: var(--grozomart-primary-color, #1e1e22);
 	color: #fff;
 	padding: 0;
 	text-align: center;
@@ -673,7 +673,7 @@ pre {
 }
 
 .blog-details-content .post-password-form input[type=submit]:hover {
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 	color: #fff;
 }
 
@@ -703,7 +703,7 @@ pre {
 
 .wp-block-calendar table:where(:not(.has-text-color)) td,
 .wp-block-calendar table:where(:not(.has-text-color)) th {
-	border-color: var(--tekprof-border-color, #F2F2F2);
+	border-color: var(--grozomart-border-color, #F2F2F2);
 }
 
 .wp-block-calendar table:where(:not(.has-text-color)) th {
@@ -716,7 +716,7 @@ pre {
 
 
 .wp-block-query-pagination-numbers a {
-	color: var(--tekprof-text) !important;
+	color: var(--grozomart-text) !important;
 }
 
 .wp-block-query-pagination-numbers a:hover {
@@ -748,7 +748,7 @@ pre {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 	width: 44px;
 	height: 44px;
 	color: #fff;
@@ -760,7 +760,7 @@ pre {
 }
 
 .wp-block-latest-comments:not(.has-avatar):not(.has-dates) li:hover::before {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 }
 
@@ -833,14 +833,14 @@ pre {
 
 
 .blog-details-content .wp-block-button a:hover {
-	background-color: var(--tekprof-primary-color);
-	border-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
+	border-color: var(--grozomart-primary-color);
 	color: #fff;
 }
 
 .blog-details-content .wp-block-button.is-style-outline.wp-block-button a {
-	color: var(--tekprof-heading-color, #696969);
-	border-color: var(--tekprof-heading-color, #696969);
+	color: var(--grozomart-heading-color, #696969);
+	border-color: var(--grozomart-heading-color, #696969);
 }
 
 .blog-details-content ul,
@@ -976,7 +976,7 @@ table>thead>tr>th {
 .wp-block-calendar .wp-calendar-nav a {
 	text-decoration: none;
 	line-height: 1;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	text-transform: capitalize;
 	font-weight: 600;
 	transition: all 500ms ease;
@@ -1075,18 +1075,18 @@ big {
 
 .sidebar .widget select,
 .sidebar__single select {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 
 
 .sidebar .widget .wp-block-latest-comments__comment-meta a {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .sidebar .widget .wp-block-rss__item-author,
 .sidebar .widget .wp-block-rss__item-publish-date {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .sidebar .widget .wp-block-search .wp-block-search__button,
@@ -1099,9 +1099,9 @@ big {
 }
 
 .sidebar .widget .wp-block-tag-cloud a {
-	color: var(--tekprof-heading-color, #141414);
+	color: var(--grozomart-heading-color, #141414);
 	text-transform: capitalize;
-	font-family: var(--tekprof-heading-font, "Lexend", serif);
+	font-family: var(--grozomart-heading-font, "Lexend", serif);
 	font-size: 14px !important;
 	font-weight: 400;
 }
@@ -1114,11 +1114,11 @@ big {
 	font-size: 22px;
 	font-weight: 700;
 	text-transform: capitalize;
-	font-family: var(--tekprof-heading-font);
+	font-family: var(--grozomart-heading-font);
 	margin: 0;
 	margin-top: -5px;
 	margin-bottom: 29px;
-	color: var(--tekprof-secondary, #241F21);
+	color: var(--grozomart-secondary, #241F21);
 	line-height: 108.333%;
 }
 
@@ -1152,8 +1152,8 @@ big {
 .sidebar .widget .tagcloud a,
 .sidebar__single .tagcloud a,
 .sidebar__single .wp-block-tag-cloud a {
-	color: var(--tekprof-heading-color, #141414);
-	font-family: var(--tekprof-heading-font, "Lexend", serif);
+	color: var(--grozomart-heading-color, #141414);
+	font-family: var(--grozomart-heading-font, "Lexend", serif);
 	font-size: 14px !important;
 	padding: 2px 20px;
 }
@@ -1170,7 +1170,7 @@ big {
 	width: 45px;
 	border-radius: 50%;
 	font-size: 15px;
-	color: var(--tekprof-white, #1c1a1d);
+	color: var(--grozomart-white, #1c1a1d);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1181,19 +1181,19 @@ big {
 	content: "\f075";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
-	background-color: var(--tekprof-heading-color, #fff);
+	background-color: var(--grozomart-heading-color, #fff);
 }
 
 .sidebar .widget.widget_recent_entries ul li:hover::before,
 .sidebar .widget.widget_recent_comments ul li:hover::before,
 .sidebar__single.widget_recent_entries ul li:hover::before,
 .sidebar__single.widget_recent_comments ul li:hover::before {
-	background-color: var(--tekprof-primary-color, #c2a74e);
+	background-color: var(--grozomart-primary-color, #c2a74e);
 	color: #ffffff;
 }
 
 .sidebar .widget_rss .rss-widget-title:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .sidebar .widget .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
@@ -1201,7 +1201,7 @@ big {
 	line-height: 24px;
 	font-size: 16px;
 	line-height: 24px;
-	font-family: var(--tekprof-heading-font, "Cormorant", serif);
+	font-family: var(--grozomart-heading-font, "Cormorant", serif);
 	text-transform: capitalize;
 }
 
@@ -1209,11 +1209,11 @@ big {
 .sidebar__single ul li a {
 	transition: all 500ms ease;
 	font-weight: 500;
-	color: var(--tekprof-color);
+	color: var(--grozomart-color);
 }
 
 .sidebar__single .calendar_wrap .wp-calendar-table thead {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 }
 
 .sidebar__single .calendar_wrap .wp-calendar-table thead th {
@@ -1235,9 +1235,9 @@ big {
 	padding: 8px 20px;
 	-webkit-transition: .3s;
 	transition: .3s;
-	color: var(--tekprof-base-color);
+	color: var(--grozomart-base-color);
 	background-color: transparent;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	border-radius: 0;
 }
 
@@ -1251,13 +1251,13 @@ big {
 	gap: 10px;
 }
 
-.tekprof-search-form {
+.grozomart-search-form {
 	position: relative;
 }
 
-.tekprof-search-form button[type=submit] {
+.grozomart-search-form button[type=submit] {
 	background-color: transparent;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-size: 22px;
 	position: absolute;
 	top: 0;
@@ -1280,8 +1280,8 @@ big {
 	font-weight: 700;
 	font-size: 20px;
 	line-height: 24px;
-	font-family: var(--tekprof-heading-font);
-	color: var(--tekprof-heading-color);
+	font-family: var(--grozomart-heading-font);
+	color: var(--grozomart-heading-color);
 	text-transform: capitalize;
 }
 
@@ -1305,7 +1305,7 @@ big {
 	position: relative;
 	font-size: 16px;
 	text-transform: capitalize;
-	color: var(--tekprof-gray, #717178);
+	color: var(--grozomart-gray, #717178);
 	transition: all 0.3s ease;
 	z-index: 1;
 	font-weight: 500;
@@ -1431,7 +1431,7 @@ i.far {
 }
 
 .banner-wrap.bgs-cover {
-	background: var(--tekprof-blue-color);
+	background: var(--grozomart-blue-color);
 	background-size: cover;
 }
 
@@ -1441,7 +1441,7 @@ i.far {
 	font-size: 24px;
 	color: white;
 	font-weight: 600;
-	font-family: var(--tekprof-heading-font);
+	font-family: var(--grozomart-heading-font);
 }
 
 span.separator {
@@ -1473,11 +1473,11 @@ span.separator i.fa {
 
 /* home ai software */
 .ai-software .bgc-navyblue {
-	background-color: var(--tekprof-navyblue-color);
+	background-color: var(--grozomart-navyblue-color);
 }
 
 .ai-software .subtitle-one {
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 }
 
 .ai-software .scroll-top {
@@ -1494,28 +1494,28 @@ span.separator i.fa {
 .ai-software .theme-btn.style-two,
 .ai-software a.theme-btn.style-two {
 	color: white;
-	background: var(--tekprof-navyblue-color);
+	background: var(--grozomart-navyblue-color);
 }
 
 .ai-software .color-two {
-	--tekprof-primary-color: #FEC458;
+	--grozomart-primary-color: #FEC458;
 }
 
 .ai-software .color-four {
-	--tekprof-primary-color: #FF008A;
+	--grozomart-primary-color: #FF008A;
 }
 
 /* IT Services */
 
 .it-services .bgc-secondary {
-	background-color: var(--tekprof-secondary-color);
+	background-color: var(--grozomart-secondary-color);
 }
 
 .it-services .section-title .sub-title {
 	font-size: 20px;
 	font-weight: 500;
 	display: inline-block;
-	color: var(--tekprof-secondary-color);
+	color: var(--grozomart-secondary-color);
 }
 
 .it-services .bgc-gray {
@@ -1523,7 +1523,7 @@ span.separator i.fa {
 }
 
 .it-services .list-style-one li i {
-	color: var(--tekprof-secondary-color)
+	color: var(--grozomart-secondary-color)
 }
 
 .it-services .list-style-one li:not(:last-child) {
@@ -1592,7 +1592,7 @@ div.trusted-clients img {
 	background-color: currentColor !important;
 }
 
-.tekprof-body-content {
+.grozomart-body-content {
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
@@ -1606,11 +1606,11 @@ div.trusted-clients img {
 	}
 }
 
-.blog-details-content blockquote.tekprof-blockquote {
+.blog-details-content blockquote.grozomart-blockquote {
 	border-left: 0
 }
 
-.blog-details-content blockquote.tekprof-blockquote::before {
+.blog-details-content blockquote.grozomart-blockquote::before {
 	content: "";
 }
 
@@ -1618,7 +1618,7 @@ div.trusted-clients img {
 	max-width: 350px;
 }
 
-.elementor-widget-tekprof-footer-shape {
+.elementor-widget-grozomart-footer-shape {
 	position: unset !important;
 }
 
@@ -1657,7 +1657,7 @@ section.hero-area-five {
 /***************** ## Home Seven Color *****************/
 /*******************************************************/
 body.home-seven {
-	--tekprof-primary-rgb: 53, 52, 255;
+	--grozomart-primary-rgb: 53, 52, 255;
 }
 
 .home-seven .bgc-blue {
@@ -1685,7 +1685,7 @@ body.home-seven {
 
 /** ===== WooCommerce Start ===== **/
 .woocommerce-loop-top {
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	padding: 35px 70px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1726,7 +1726,7 @@ body.home-seven {
 .woocommerce-loop-top .woocommerce-result-count {
 	font-size: 16px;
 	margin: 0;
-	color: var(--tekprof-body-color);
+	color: var(--grozomart-body-color);
 	float: none;
 }
 
@@ -1745,9 +1745,9 @@ body.home-seven {
 	height: 60px;
 	width: 350px;
 	border-radius: 0;
-	border: 1px solid var(--tekprof-border-color);
-	color: var(--tekprof-body-color);
-	background-color: var(--tekprof-white-color);
+	border: 1px solid var(--grozomart-border-color);
+	color: var(--grozomart-body-color);
+	background-color: var(--grozomart-white-color);
 }
 
 @media (max-width: 767px) {
@@ -1769,7 +1769,7 @@ body.woocommerce-page select,
 body.woocommerce-page textarea {
 	font-size: 15px;
 	color: #b2b2b2;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	border-radius: 5px;
 	height: 55px;
 }
@@ -1782,8 +1782,8 @@ body.woocommerce-page input:focus,
 body.woocommerce-page select:focus,
 body.woocommerce-page select:focus,
 body.woocommerce-page textarea:focus {
-	border-color: var(--tekprof-heading-color);
-	color: var(--tekprof-heading-color);
+	border-color: var(--grozomart-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 body.woocommerce .select2-container,
@@ -1804,7 +1804,7 @@ body.woocommerce-page .select2-container .select2-selection--single {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 }
 
 body.woocommerce .select2-container .select2-selection--single .select2-selection__rendered,
@@ -1826,17 +1826,17 @@ body.woocommerce-page .select2-container span.selection {
 
 body.woocommerce .select2-container .select2-search--dropdown .select2-search__field,
 body.woocommerce-page .select2-container .select2-search--dropdown .select2-search__field {
-	border-color: var(--tekprof-border-color);
+	border-color: var(--grozomart-border-color);
 }
 
 body.woocommerce .select2-container .select2-search--dropdown .select2-search__field:focus,
 body.woocommerce-page .select2-container .select2-search--dropdown .select2-search__field:focus {
-	border-color: var(--tekprof-heading-color);
+	border-color: var(--grozomart-heading-color);
 }
 
 body.woocommerce .select2-dropdown,
 body.woocommerce-page .select2-dropdown {
-	border-color: var(--tekprof-border-color);
+	border-color: var(--grozomart-border-color);
 }
 
 body.woocommerce form .form-row,
@@ -1847,12 +1847,12 @@ body.woocommerce-page form .form-row {
 body.woocommerce table.cart td.actions .coupon .input-text,
 body.woocommerce-page table.cart td.actions .coupon .input-text {
 	margin-right: 15px;
-	border-color: var(--tekprof-border-color);
+	border-color: var(--grozomart-border-color);
 }
 
 body.woocommerce table.cart td.actions .coupon .input-text:focus,
 body.woocommerce-page table.cart td.actions .coupon .input-text:focus {
-	border-color: var(--tekprof-heading-color);
+	border-color: var(--grozomart-heading-color);
 }
 
 body.woocommerce textarea,
@@ -1886,7 +1886,7 @@ body.woocommerce-page .actions .button,
 body.woocommerce-page .wc-forward {
 	position: relative;
 	z-index: 1;
-	font-family: var(--tekprof-primary-font);
+	font-family: var(--grozomart-primary-font);
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 1;
@@ -1894,8 +1894,8 @@ body.woocommerce-page .wc-forward {
 	text-decoration: none;
 	border-radius: 5px;
 	border: none;
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
 	overflow: hidden;
 	padding: 18px 30px;
 	-webkit-transition: 0.3s;
@@ -1943,13 +1943,13 @@ body.woocommerce-page .single_add_to_cart_button.alt:hover,
 body.woocommerce-page #respond input#submit:hover,
 body.woocommerce-page .actions .button:hover,
 body.woocommerce-page .wc-forward:hover {
-	color: var(--tekprof-white-color);
-	background-color: var(--tekprof-heading-color);
+	color: var(--grozomart-white-color);
+	background-color: var(--grozomart-heading-color);
 }
 
 body.woocommerce .button:hover,
 body.woocommerce-page .button:hover {
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 }
 
 body.woocommerce .button:disabled[disabled],
@@ -1964,7 +1964,7 @@ body.woocommerce-page .single_add_to_cart_button.alt:disabled[disabled],
 body.woocommerce-page #respond input#submit:disabled[disabled],
 body.woocommerce-page .actions .button:disabled[disabled],
 body.woocommerce-page .wc-forward:disabled[disabled] {
-	color: var(--tekprof-white-color);
+	color: var(--grozomart-white-color);
 }
 
 body.woocommerce .button:after,
@@ -1986,7 +1986,7 @@ body.woocommerce .button.alt.disabled,
 body.woocommerce .button.alt:disabled,
 body.woocommerce-page .button.alt.disabled,
 body.woocommerce-page .button.alt:disabled {
-	background-color: var(--tekprof-primary-color) !important;
+	background-color: var(--grozomart-primary-color) !important;
 }
 
 body.woocommerce label,
@@ -2043,12 +2043,12 @@ body.woocommerce-page table.shop_table tfoot th {
 
 body.woocommerce table.shop_table a,
 body.woocommerce-page table.shop_table a {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 body.woocommerce table.shop_table a:hover,
 body.woocommerce-page table.shop_table a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 body.woocommerce #add_payment_method table.cart img,
@@ -2065,8 +2065,8 @@ body.woocommerce .woocommerce-info,
 body.woocommerce-page .woocommerce-message,
 body.woocommerce-page .woocommerce-info {
 	color: inherit;
-	background-color: var(--tekprof-lighter-color);
-	border-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-lighter-color);
+	border-color: var(--grozomart-primary-color);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2102,7 +2102,7 @@ body.woocommerce .woocommerce-message:before,
 body.woocommerce .woocommerce-info:before,
 body.woocommerce-page .woocommerce-message:before,
 body.woocommerce-page .woocommerce-info:before {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -2161,10 +2161,10 @@ body.woocommerce-page span.onsale {
 	min-width: inherit;
 	min-height: inherit;
 	font-size: 13px;
-	color: var(--tekprof-white-color);
+	color: var(--grozomart-white-color);
 	padding: 0 17px;
 	text-align: center;
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	margin: 0 !important;
 	top: 20px !important;
 	left: auto !important;
@@ -2297,7 +2297,7 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce ul.products .woocommerce-product-inner .product-content {
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	padding: 40px;
 	line-height: 1;
 }
@@ -2326,7 +2326,7 @@ body.woocommerce-page span.onsale {
 
 .woocommerce ul.products .woocommerce-product-inner .categories {
 	font-size: 16px;
-	color: var(--tekprof-body-color);
+	color: var(--grozomart-body-color);
 }
 
 @media (max-width: 1200px) {
@@ -2388,9 +2388,9 @@ body.woocommerce-page span.onsale {
 	align-items: center;
 	margin: 0;
 	font-size: 16px;
-	font-family: var(--tekprof-base-font);
+	font-family: var(--grozomart-base-font);
 	font-weight: 400;
-	color: var(--tekprof-base-color);
+	color: var(--grozomart-base-color);
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
@@ -2446,13 +2446,13 @@ body.woocommerce-page span.onsale {
 	line-height: 1;
 	padding: 15px 34px;
 	overflow: hidden;
-	color: var(--tekprof-white-color);
+	color: var(--grozomart-white-color);
 	border-radius: 0;
 }
 
 .woocommerce ul.products .woocommerce-product-inner .cart-button a.button:hover,
 .woocommerce ul.products .woocommerce-product-inner .cart-button .wc-forward:hover {
-	color: var(--tekprof-white-color);
+	color: var(--grozomart-white-color);
 }
 
 @media (max-width: 1200px) {
@@ -2478,7 +2478,7 @@ body.woocommerce-page span.onsale {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 }
 
 .woocommerce ul.products .woocommerce-product-inner .cart-button a.button.loading::after,
@@ -2568,8 +2568,8 @@ body.woocommerce-page span.onsale {
 	width: 50px;
 	margin: 5px 5px 0;
 	padding: 0;
-	color: var(--tekprof-heading-color);
-	font-family: var(--tekprof-primary-font);
+	color: var(--grozomart-heading-color);
+	font-family: var(--grozomart-primary-font);
 	font-weight: 600;
 	font-size: 18px;
 	border: 2px solid rgba(44, 44, 44, 0.071);
@@ -2590,9 +2590,9 @@ body.woocommerce-page span.onsale {
 
 .woocommerce .woocommerce-pagination .page-numbers.current,
 .woocommerce .woocommerce-pagination .page-numbers:not(.dots):hover {
-	color: var(--tekprof-white-color);
-	background-color: var(--tekprof-primary-color);
-	border-color: var(--tekprof-primary-color);
+	color: var(--grozomart-white-color);
+	background-color: var(--grozomart-primary-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 /** ===== Product Details ===== **/
@@ -2688,7 +2688,7 @@ body.woocommerce-page span.onsale {
 .woocommerce.single-product div.product .quantity .qty {
 	border-radius: 0;
 	font-size: 15px !important;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: 500;
 	height: 50px !important;
 	width: 70px;
@@ -2697,7 +2697,7 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .quantity .qty:focus {
-	border-color: var(--tekprof-primary-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary {
@@ -2744,7 +2744,7 @@ body.woocommerce-page span.onsale {
 	flex: 0 0 auto;
 	font-size: 24px;
 	font-weight: 500;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	line-height: 1;
 	margin: 0;
 	display: -webkit-box;
@@ -2773,7 +2773,7 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .entry-summary .woocommerce-product-rating a.woocommerce-review-link {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	line-height: 1;
 	margin-left: 10px;
 	font-size: 15px;
@@ -2800,7 +2800,7 @@ body.woocommerce-page span.onsale {
 	font-size: 18px;
 	font-weight: 700;
 	margin: 20px 0 0;
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary .product_meta {
@@ -2815,7 +2815,7 @@ body.woocommerce-page span.onsale {
 	font-size: 18px;
 	text-transform: capitalize;
 	font-weight: 600;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	margin-bottom: 8px;
 	line-height: 1.4;
 }
@@ -2826,14 +2826,14 @@ body.woocommerce-page span.onsale {
 .woocommerce.single-product div.product .entry-summary .product_meta .posted_in a,
 .woocommerce.single-product div.product .entry-summary .product_meta .tagged_as span,
 .woocommerce.single-product div.product .entry-summary .product_meta .tagged_as a {
-	color: var(--tekprof-body-color);
+	color: var(--grozomart-body-color);
 	margin-left: 7px;
 	text-transform: capitalize;
 	font-weight: 400;
 	padding: 5px 15px;
 	margin-bottom: 10px;
 	display: inline-block;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	font-size: 16px;
 }
 
@@ -2843,21 +2843,21 @@ body.woocommerce-page span.onsale {
 .woocommerce.single-product div.product .entry-summary .product_meta .posted_in a:hover,
 .woocommerce.single-product div.product .entry-summary .product_meta .tagged_as span:hover,
 .woocommerce.single-product div.product .entry-summary .product_meta .tagged_as a:hover {
-	color: var(--tekprof-white-color) !important;
-	background: var(--tekprof-primary-color);
-	border-color: var(--tekprof-primary-color);
+	color: var(--grozomart-white-color) !important;
+	background: var(--grozomart-primary-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary .product_meta .sku_wrapper a:hover,
 .woocommerce.single-product div.product .entry-summary .product_meta .posted_in a:hover,
 .woocommerce.single-product div.product .entry-summary .product_meta .tagged_as a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart {
 	padding: 35px 0 0;
 	margin: 35px 0 0;
-	border-top: 1px solid var(--tekprof-border-color);
+	border-top: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart label {
@@ -2865,7 +2865,7 @@ body.woocommerce-page span.onsale {
 	letter-spacing: 0.03em;
 	margin-bottom: 0;
 	margin-right: 8px;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: 500;
 	text-transform: capitalize;
 }
@@ -2875,7 +2875,7 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart label a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart .reset_variations {
@@ -2893,7 +2893,7 @@ body.woocommerce-page span.onsale {
 
 .woocommerce.single-product div.product .entry-summary form.cart .woocommerce-grouped-product-list .woocommerce-Price-amount {
 	font-weight: 600;
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart .woocommerce-grouped-product-list del .woocommerce-Price-amount {
@@ -2916,10 +2916,10 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .entry-summary form.cart .button-variable-wrapper .button-variable-item {
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	border: none;
 	line-height: 40px;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	text-transform: capitalize;
 	border-radius: 0;
 	-webkit-box-shadow: none;
@@ -2938,7 +2938,7 @@ body.woocommerce-page span.onsale {
 
 .woocommerce.single-product div.product .entry-summary form.cart .button-variable-wrapper .button-variable-item.selected,
 .woocommerce.single-product div.product .entry-summary form.cart .button-variable-wrapper .button-variable-item:hover {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 }
 
@@ -3019,10 +3019,10 @@ body.woocommerce-page span.onsale {
 	font-weight: 500;
 	line-height: 1;
 	text-transform: capitalize;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	border-radius: 5px;
 	padding: 18px 45px;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	background-color: transparent;
 }
 
@@ -3052,15 +3052,15 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs ul.wc-tabs li a:hover {
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
-	border-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs ul.wc-tabs li.active a {
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
-	border-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs ul.wc-tabs li:before,
@@ -3082,14 +3082,14 @@ body.woocommerce-page span.onsale {
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs .woocommerce-Tabs-panel .shop_attributes {
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs .woocommerce-Tabs-panel .shop_attributes th,
 .woocommerce.single-product div.product .woocommerce-tabs .woocommerce-Tabs-panel .shop_attributes td {
 	border-bottom: 1px solid transparent;
 	font-family: inherit;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: normal;
 	font-style: normal;
 	padding: 10px;
@@ -3220,13 +3220,13 @@ body.woocommerce-page span.onsale {
 
 .woocommerce.single-product div.product .woocommerce-tabs #review_form #respond input:not([type=submit]),
 .woocommerce.single-product div.product .woocommerce-tabs #review_form #respond textarea {
-	background-color: var(--tekprof-lighter-color);
-	border: 1px solid var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
+	border: 1px solid var(--grozomart-lighter-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs #review_form #respond input:not([type=submit]):focus,
 .woocommerce.single-product div.product .woocommerce-tabs #review_form #respond textarea:focus {
-	border-color: var(--tekprof-primary-color);
+	border-color: var(--grozomart-primary-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs #review_form #respond #comment {
@@ -3294,7 +3294,7 @@ body.woocommerce-page span.onsale {
 .woocommerce.single-product div.product .woocommerce-tabs #reviews #comments ol.commentlist {
 	padding: 0;
 	margin: 0 0 50px;
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce.single-product div.product .woocommerce-tabs #reviews #comments ol.commentlist li.review {
@@ -3365,7 +3365,7 @@ body.woocommerce-page span.onsale {
 
 .woocommerce.single-product div.product .woocommerce-tabs #reviews #comments ol.commentlist li.review .meta .woocommerce-review__author {
 	font-size: 18px;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	text-transform: capitalize;
 }
 
@@ -3381,7 +3381,7 @@ body.woocommerce-page span.onsale {
 .woocommerce.single-product section.related {
 	padding-top: 100px;
 	margin-top: 100px;
-	border-top: 1px solid var(--tekprof-border-color);
+	border-top: 1px solid var(--grozomart-border-color);
 }
 
 @media (max-width: 1024px) {
@@ -3406,14 +3406,14 @@ body.woocommerce-page span.onsale {
 body.woocommerce-cart .woocommerce-cart-form .actions .button {
 	height: 50px;
 	padding: 10px 35px;
-	color: var(--tekprof-white-color);
+	color: var(--grozomart-white-color);
 	transition: 1s;
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button:hover,
 body.woocommerce-cart .woocommerce-cart-form .actions .button:hover {
-	background-color: var(--tekprof-heading-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-heading-color);
+	color: var(--grozomart-white-color);
 }
 
 
@@ -3432,7 +3432,7 @@ body.woocommerce-cart .woocommerce-cart-form .shop_table {
 }
 
 body.woocommerce-cart .woocommerce-cart-form .shop_table thead th {
-	font-family: var(--tekprof-secondary-font);
+	font-family: var(--grozomart-secondary-font);
 	font-size: 18px;
 	font-weight: 700;
 	color: #333;
@@ -3440,7 +3440,7 @@ body.woocommerce-cart .woocommerce-cart-form .shop_table thead th {
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	border-bottom: 2px solid var(--tekprof-primary-color);
+	border-bottom: 2px solid var(--grozomart-primary-color);
 }
 
 body.woocommerce-cart .woocommerce-cart-form .shop_table tbody td {
@@ -3448,7 +3448,7 @@ body.woocommerce-cart .woocommerce-cart-form .shop_table tbody td {
 	border-left: none;
 	border-right: none;
 	border-top: none;
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 	padding: 18px 15px;
 }
 
@@ -3463,7 +3463,7 @@ body.woocommerce-cart .woocommerce-cart-form .shop_table tbody td .quantity .qty
 	height: 50px;
 	border-radius: 0;
 	font-size: 15px !important;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 @media (max-width: 768px) {
@@ -3477,14 +3477,14 @@ body.woocommerce-cart .woocommerce-cart-form .shop_table tbody td .quantity-icon
 }
 
 body.woocommerce-cart .woocommerce-cart-form tbody .product-name a {
-	color: var(--tekprof-heading-color);
-	font-family: var(--tekprof-secondary-font);
+	color: var(--grozomart-heading-color);
+	font-family: var(--grozomart-secondary-font);
 	font-size: 16px;
 	font-weight: 700;
 }
 
 body.woocommerce-cart .woocommerce-cart-form tbody .product-name a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 body.woocommerce-cart .woocommerce-cart-form tbody .product-name dl.variation {
@@ -3493,14 +3493,14 @@ body.woocommerce-cart .woocommerce-cart-form tbody .product-name dl.variation {
 
 body.woocommerce-cart .woocommerce-cart-form tbody .product-price,
 body.woocommerce-cart .woocommerce-cart-form tbody .product-subtotal {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-size: 15px;
 	font-weight: 500;
 }
 
 body.woocommerce-cart .woocommerce-cart-form tbody .product-price ins,
 body.woocommerce-cart .woocommerce-cart-form tbody .product-subtotal ins {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	background-color: transparent;
 }
 
@@ -3523,8 +3523,8 @@ body.woocommerce-cart .woocommerce-cart-form .product-remove a.remove {
 	height: 25px;
 	width: 25px;
 	line-height: 25px;
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color) !important;
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color) !important;
 	border-radius: 50%;
 	font-weight: normal;
 	-webkit-transition: 0.3s;
@@ -3534,7 +3534,7 @@ body.woocommerce-cart .woocommerce-cart-form .product-remove a.remove {
 }
 
 body.woocommerce-cart .woocommerce-cart-form .product-remove a.remove:hover {
-	background-color: var(--tekprof-secondary-color);
+	background-color: var(--grozomart-secondary-color);
 }
 
 @media (max-width: 1024px) {
@@ -3555,7 +3555,7 @@ body.woocommerce-cart .woocommerce-cart-form table.shop_table {
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals {
-	background-color: var(--tekprof-white-color);
+	background-color: var(--grozomart-white-color);
 	padding: 40px 50px;
 	-webkit-box-shadow: 0px 10px 60px 0px rgba(195, 195, 195, 0.3);
 	box-shadow: 0px 10px 60px 0px rgba(195, 195, 195, 0.3);
@@ -3591,12 +3591,12 @@ body.woocommerce-cart .cart-collaterals .cart_totals th {
 	font-weight: 500;
 	vertical-align: middle !important;
 	border: none !important;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	padding: 10px 10px 10px 0px;
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals th+td {
-	border-left: 1px solid var(--tekprof-border-color);
+	border-left: 1px solid var(--grozomart-border-color);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals td {
@@ -3607,7 +3607,7 @@ body.woocommerce-cart .cart-collaterals .cart_totals td {
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals label {
-	font-family: var(--tekprof-primary-font);
+	font-family: var(--grozomart-primary-font);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals strong {
@@ -3616,7 +3616,7 @@ body.woocommerce-cart .cart-collaterals .cart_totals strong {
 
 body.woocommerce-cart .cart-collaterals .cart_totals .order-total th,
 body.woocommerce-cart .cart-collaterals .cart_totals .order-total td {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: 600;
 }
 
@@ -3629,11 +3629,11 @@ body.woocommerce-cart .cart-collaterals .cart_totals .woocommerce-shipping-calcu
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .woocommerce-shipping-calculator .shipping-calculator-button {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .woocommerce-shipping-calculator .shipping-calculator-button:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .woocommerce-shipping-calculator .shipping-calculator-form {
@@ -3650,12 +3650,12 @@ body.woocommerce-cart .cart-collaterals .cart_totals .wc-proceed-to-checkout .ch
 	padding: 18px 30px;
 	font-size: 16px;
 	font-weight: 500;
-	color: var(--tekprof-white-color);
-	background-color: var(--tekprof-primary-color);
+	color: var(--grozomart-white-color);
+	background-color: var(--grozomart-primary-color);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .wc-proceed-to-checkout .checkout-button:hover {
-	background-color: var(--tekprof-heading-color);
+	background-color: var(--grozomart-heading-color);
 }
 
 body.woocommerce-cart .cart-collaterals .cart_totals .form-row-wide>span {
@@ -3675,7 +3675,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .woocommerce-checkout form.checkout_coupon {
 	border: none;
 	border-radius: 0;
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	margin: 0;
 	padding: 30px;
 }
@@ -3709,7 +3709,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .woocommerce-checkout form.login,
 .woocommerce-checkout form.register {
 	border: none;
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	padding: 30px;
 }
 
@@ -3786,7 +3786,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-checkout #customer_details .woocommerce-shipping-fields #ship-to-different-address:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce-checkout #customer_details .woocommerce-shipping-fields #ship-to-different-address #ship-to-different-address-checkbox {
@@ -3827,11 +3827,11 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review th+td {
-	border-left: 1px solid var(--tekprof-border-color);
+	border-left: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review .product-total {
-	border-left: 1px solid var(--tekprof-border-color);
+	border-left: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review .woocommerce-checkout-review-order-table {
@@ -3855,12 +3855,12 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .woocommerce-checkout form.woocommerce-checkout #order_review .woocommerce-checkout-review-order-table .order-total td {
 	font-size: 14px;
 	font-weight: 500;
-	color: var(--tekprof-base-color);
+	color: var(--grozomart-base-color);
 	padding: 10px 15px;
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment {
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment .about_paypal {
@@ -3869,7 +3869,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment .wc_payment_methods {
 	padding: 30px;
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment .place-order {
@@ -3880,13 +3880,13 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment #place_order {
 	float: none;
 	margin-top: 10px;
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
 }
 
 .woocommerce-checkout form.woocommerce-checkout #order_review #payment #place_order:hover {
-	background-color: var(--tekprof-heading-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-heading-color);
+	color: var(--grozomart-white-color);
 }
 
 .woocommerce-checkout #payment input[type=radio] {
@@ -3897,17 +3897,17 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-checkout #payment label {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	display: inline-block;
 	margin: 0 0 8px;
 }
 
 .woocommerce-checkout #payment div.payment_box {
-	background-color: var(--tekprof-border-color);
+	background-color: var(--grozomart-border-color);
 }
 
 .woocommerce-checkout #payment div.payment_box::before {
-	border-color: var(--tekprof-border-color);
+	border-color: var(--grozomart-border-color);
 	border-right-color: transparent;
 	border-left-color: transparent;
 	border-top-color: transparent;
@@ -3919,7 +3919,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-checkout .woocommerce-customer-details address {
-	border-color: var(--tekprof-border-color);
+	border-color: var(--grozomart-border-color);
 	padding: 30px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -3955,19 +3955,19 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-account .content-area .woocommerce-MyAccount-navigation ul li {
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 }
 
 .woocommerce-account .content-area .woocommerce-MyAccount-navigation ul li a {
 	font-size: 16px;
 	padding: 10px 0;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	position: relative;
 	display: block;
 }
 
 .woocommerce-account .content-area .woocommerce-MyAccount-navigation ul li a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce-account .content-area .woocommerce-MyAccount-navigation ul li a:before {
@@ -3980,7 +3980,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	transform: translate(0, -50%);
 	display: block;
 	font-family: "Font Awesome 5 Pro";
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	margin-left: -16px;
 	opacity: 0;
 	-webkit-transition: 0.3s;
@@ -4042,7 +4042,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 .woocommerce-account .content-area .woocommerce-MyAccount-content fieldset {
 	padding: 15px;
-	border: 1px solid var(--tekprof-border-color);
+	border: 1px solid var(--grozomart-border-color);
 	margin-bottom: 15px;
 }
 
@@ -4058,7 +4058,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-account .content-area .woocommerce-form {
-	background-color: var(--tekprof-lighter-color);
+	background-color: var(--grozomart-lighter-color);
 	border: none;
 	padding: 30px;
 	border-radius: 0;
@@ -4080,11 +4080,11 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce-account .content-area .woocommerce-form .woocommerce-LostPassword a {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .woocommerce-account .content-area .woocommerce-form .woocommerce-LostPassword a:hover {
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .woocommerce-account .content-area .woocommerce-form .woocommerce-form__label-for-checkbox {
@@ -4191,18 +4191,18 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .widget-cart-sidebar .widget_shopping_title {
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 	margin-bottom: 18px;
 	padding-bottom: 14px;
-	font-family: var(--tekprof-secondary-font);
+	font-family: var(--grozomart-secondary-font);
 	font-size: 18px;
 	font-weight: 600;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .widget-cart-sidebar .cart-close {
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -4219,7 +4219,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .widget-cart-sidebar .cart-close:hover {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 }
 
 .widget-cart-sidebar .widget_shopping_cart {
@@ -4231,8 +4231,8 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 .widget-cart-sidebar .widget_shopping_cart .cart-btn {
 	padding: 20px 35px;
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
 	font-weight: 600;
 	line-height: 1;
 	display: block;
@@ -4243,8 +4243,8 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .widget-cart-sidebar .widget_shopping_cart .cart-btn:hover {
-	background-color: var(--tekprof-heading-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-heading-color);
+	color: var(--grozomart-white-color);
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list {
@@ -4260,7 +4260,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	display: flex;
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
-	border-bottom: 1px solid var(--tekprof-border-color);
+	border-bottom: 1px solid var(--grozomart-border-color);
 	position: relative;
 	margin: 0;
 }
@@ -4321,7 +4321,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-meta h3 a:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-meta .quantity {
@@ -4341,7 +4341,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	text-align: center;
 	border-radius: 18px;
 	line-height: 17px;
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	font-size: 18px;
 }
 
@@ -4367,7 +4367,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	padding-top: 15px;
 	padding-bottom: 0;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	font-weight: 500;
 }
 
@@ -4398,11 +4398,11 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 /** ===== Maintenance ===== **/
-.tekprof-maintenance-page {
+.grozomart-maintenance-page {
 	background-color: #02050A;
 }
 
-.tekprof-maintenance-page .container {
+.grozomart-maintenance-page .container {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -4416,58 +4416,58 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	height: 100vh;
 }
 
-.tekprof-maintenance-page .container .maintenance-content {
+.grozomart-maintenance-page .container .maintenance-content {
 	max-width: 50%;
 	text-align: center;
 }
 
 @media (max-width: 1024px) {
-	.tekprof-maintenance-page .container .maintenance-content {
+	.grozomart-maintenance-page .container .maintenance-content {
 		max-width: 75%;
 	}
 }
 
 @media (max-width: 767px) {
-	.tekprof-maintenance-page .container .maintenance-content {
+	.grozomart-maintenance-page .container .maintenance-content {
 		max-width: 80%;
 	}
 }
 
 @media (max-width: 479px) {
-	.tekprof-maintenance-page .container .maintenance-content {
+	.grozomart-maintenance-page .container .maintenance-content {
 		max-width: 100%;
 	}
 }
 
-.tekprof-maintenance-page .container .maintenance-img {
+.grozomart-maintenance-page .container .maintenance-img {
 	margin-bottom: 35px;
 }
 
-.tekprof-maintenance-page .container .maintenance-title {
+.grozomart-maintenance-page .container .maintenance-title {
 	font-size: 42px;
 	line-height: 1.3;
 	color: #fff;
 }
 
 @media (max-width: 767px) {
-	.tekprof-maintenance-page .container .maintenance-title {
+	.grozomart-maintenance-page .container .maintenance-title {
 		font-size: 32px;
 	}
 }
 
 @media (max-width: 479px) {
-	.tekprof-maintenance-page .container .maintenance-title {
+	.grozomart-maintenance-page .container .maintenance-title {
 		font-size: 28px;
 	}
 }
 
-.tekprof-maintenance-page .container p {
+.grozomart-maintenance-page .container p {
 	margin: 0;
 	color: #c0c0c2;
 }
 
 /** ===== Popup ===== **/
-.tekprof-popup-wrapper {
+.grozomart-popup-wrapper {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -4483,7 +4483,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	animation-duration: 0.4s;
 }
 
-.tekprof-popup-wrapper .popup-overly {
+.grozomart-popup-wrapper .popup-overly {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -4494,7 +4494,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	cursor: pointer;
 }
 
-.tekprof-popup-wrapper .popup-container {
+.grozomart-popup-wrapper .popup-container {
 	position: relative;
 	z-index: 2;
 	max-width: 100%;
@@ -4505,10 +4505,10 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	animation-name: popupFadeIn;
 	-webkit-animation-duration: 0.5s;
 	animation-duration: 0.5s;
-	background-color: var(--tekprof-white-color);
+	background-color: var(--grozomart-white-color);
 }
 
-.tekprof-popup-wrapper .popup-container .popup-close {
+.grozomart-popup-wrapper .popup-container .popup-close {
 	position: absolute;
 	right: 10px;
 	top: 10px;
@@ -4527,20 +4527,20 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	-ms-flex-pack: center;
 	justify-content: center;
 	cursor: pointer;
-	color: var(--tekprof-white-color);
-	background-color: var(--tekprof-primary-color);
+	color: var(--grozomart-white-color);
+	background-color: var(--grozomart-primary-color);
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
-.tekprof-popup-wrapper.show-popup {
+.grozomart-popup-wrapper.show-popup {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-.tekprof-popup-wrapper.show-popup .popup-container {
+.grozomart-popup-wrapper.show-popup .popup-container {
 	display: block;
 }
 
@@ -4578,7 +4578,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce p.stars a {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	font-size: 20px;
 }
 
@@ -4623,7 +4623,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	padding: 15px 10px;
 	text-align: left;
 	font-weight: 600;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .wc-block-cart-items__row {
@@ -4657,14 +4657,14 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 .wc-block-components-product-name {
 	font-weight: 600;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 	text-decoration: none;
 	font-size: 16px;
 	transition: 0.3s;
 }
 
 .wc-block-components-product-name:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .wc-block-cart-item__prices {
@@ -4679,17 +4679,17 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 .wc-block-components-product-price__value {
 	font-weight: 600;
-	color: var(--tekprof-heading-color);
+	color: var(--grozomart-heading-color);
 }
 
 .wc-block-components-product-price__value.is-discounted {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .wc-block-components-sale-badge {
 	display: inline-block;
 	background-color: #f8f8f8;
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 	padding: 3px 8px;
 	border-radius: 3px;
 	font-size: 12px;
@@ -4735,7 +4735,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .wc-block-components-quantity-selector__button:hover {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 .wc-block-components-quantity-selector__button--minus {
@@ -4748,7 +4748,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 
 /* Add to Cart Button */
 .wc-block-components-product-add-to-cart-button {
-	background-color: var(--tekprof-primary-color);
+	background-color: var(--grozomart-primary-color);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -4759,7 +4759,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .wc-block-components-product-add-to-cart-button:hover {
-	background-color: var(--tekprof-primary-hover-color, #333);
+	background-color: var(--grozomart-primary-hover-color, #333);
 }
 
 /* Checkout Button */
@@ -4769,8 +4769,8 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .wc-block-cart__submit-container a.wc-block-cart__submit-button {
-	background-color: var(--tekprof-primary-color);
-	color: var(--tekprof-white-color);
+	background-color: var(--grozomart-primary-color);
+	color: var(--grozomart-white-color);
 	border: none;
 	padding: 15px 25px;
 	border-radius: 4px;
@@ -4782,7 +4782,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .wc-block-cart__submit-button:hover {
-	background-color: var(--tekprof-primary-hover-color, #333);
+	background-color: var(--grozomart-primary-hover-color, #333);
 	color: #fff;
 }
 
@@ -4812,7 +4812,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .woocommerce ul.products .woocommerce-product-inner .categories {
-	color: var(--tekprof-base-color);
+	color: var(--grozomart-base-color);
 }
 
 .woocommerce-checkout ul li,
@@ -4824,7 +4824,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .woocommerce.single-product div.product .woocommerce-tabs #reviews #comments ol.commentlist li.review .star-rating,
 .woocommerce.single-product div.product .entry-summary .woocommerce-product-rating .star-rating,
 .woocommerce ul.products .woocommerce-product-inner .star-rating {
-	color: var(--tekprof-primary-color);
+	color: var(--grozomart-primary-color);
 }
 
 /* new */
@@ -4995,4 +4995,32 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 .main-sideber .widget_block .wp-block-social-links {
 	gap: 8px;
 	margin-bottom: 0;
+}
+
+
+/*******************************************************/
+/*********** ## Product Card Image Fixes ***************/
+/*******************************************************/
+
+/* .shop-card-arrivals-items2 .thumb is a fixed 205px box, but its <img>
+   has no size constraint -- WooCommerce images at their natural size
+   overflow the card and break the grid. Contain them, matching the
+   object-fit: cover pattern used elsewhere in this stylesheet. */
+.shop-card-arrivals-items2 .thumb {
+	overflow: hidden;
+}
+
+.shop-card-arrivals-items2 .thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* Same guard for the left-column and best-seller cards, whose images
+   come from the same WooCommerce product thumbnails. */
+.shop-card-arrivals .thumb img,
+.shop-best-seller-items .thumb img,
+.shop-card-items .thumb img {
+	max-width: 100%;
+	height: auto;
 }

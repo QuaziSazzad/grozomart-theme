@@ -25,7 +25,10 @@ class Grozomart_Assets
 	{
 		add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
 		add_action('wp_enqueue_scripts', [$this, 'enqueue_styles']);
-		add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
+		// Priority 20: run after the Grozomart Toolkit's own wp_enqueue_scripts
+		// (default priority 10), so wp_script_is(..., 'registered') below can
+		// see whichever optional libraries the plugin registered, when active.
+		add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 20);
 		add_action('wp_enqueue_scripts', [$this, 'global_root_css']);
 
 		add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts']);
@@ -123,9 +126,9 @@ class Grozomart_Assets
 
 
 		if (! empty($boxed_width)) {
-			$inline_css[] = '--tekprof-boxed-width: ' . $boxed_width['width'] . 'px';
+			$inline_css[] = '--grozomart-boxed-width: ' . $boxed_width['width'] . 'px';
 		} else {
-			$inline_css[] = '--tekprof-boxed-width: 1530px';
+			$inline_css[] = '--grozomart-boxed-width: 1530px';
 		}
 
 
@@ -166,10 +169,30 @@ class Grozomart_Assets
 	public function enqueue_scripts()
 	{
 		wp_enqueue_script('bootstrap');
+
+		/**
+		 * theme.js only hard-depends on jquery and meanmenu, both registered
+		 * by the theme itself. nice-select/magnific-popup/swiper/counterup/
+		 * wow/parallaxie are registered by the Grozomart Toolkit plugin and
+		 * every use of them in theme.js is already guarded with
+		 * `if ($.fn.xxx)`, so they're optional soft dependencies: theme.js
+		 * loads after them when the plugin is active, but still loads (with
+		 * those features simply skipped) when it's deactivated. Previously
+		 * they were hard dependencies, so deactivating the plugin removed
+		 * those handles and WordPress refused to enqueue theme.js at all —
+		 * including the preloader fade-out, leaving a blank white page.
+		 */
+		$theme_js_deps = ['jquery', 'meanmenu'];
+		foreach (['nice-select', 'magnific-popup', 'swiper', 'counterup', 'wow', 'parallaxie'] as $optional_handle) {
+			if (wp_script_is($optional_handle, 'registered')) {
+				$theme_js_deps[] = $optional_handle;
+			}
+		}
+
 		wp_enqueue_script(
 			'grozomart-theme',
 			GROZOMART_ASSETS . '/js/theme.js',
-			['jquery', 'meanmenu', 'nice-select', 'magnific-popup', 'swiper', 'counterup', 'wow', 'parallaxie'],
+			$theme_js_deps,
 			GROZOMART_VERSION,
 			true
 		);

@@ -15,7 +15,7 @@ $maintenance_title    = Helper::get_option('maintenance_title', __('The site is 
 $maintenance_subtitle = Helper::get_option('maintenance_subtitle', __('We apologize for any inconvenience caused', 'grozomart'));
 $maintenance_page     = Helper::get_option('maintenance_page');
 ?>
-<div class="tekprof-maintenance-page">
+<div class="grozomart-maintenance-page">
     <div class="container">
         <div class="maintenance-content">
             <div class="maintenance-img">

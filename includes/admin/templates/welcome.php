@@ -17,15 +17,15 @@ $allowed_html = [
 
 ?>
 
-<div class="tekprof-dashboard-pages tekprof-welcome-page">
-    <div class="tekprof-welcome-wrapper">
+<div class="grozomart-dashboard-pages grozomart-welcome-page">
+    <div class="grozomart-welcome-wrapper">
         <div class="wrapper-left">
             <div class="theme-screenshot">
                 <img src="<?php echo esc_url(get_template_directory_uri() . "/screenshot.png"); ?>" alt="<?php esc_attr_e('Screenshot', 'grozomart'); ?>">
             </div>
         </div>
         <div class="wrapper-right">
-            <div class="tekprof-welcome-title">
+            <div class="grozomart-welcome-title">
                 <h3>
                     <?php esc_html_e('Welcome to', 'grozomart'); ?>
                     <?php echo esc_html(wp_get_theme()->get('Name')); ?>
@@ -45,7 +45,7 @@ $allowed_html = [
                     <?php echo sprintf(__('%s is already installed and ready to use! Let\'s build something impressive.', 'grozomart'), GROZOMART_NAME); ?>
                 </p>
             </div>
-            <h6 class="tekprof-welcome-step-title"><?php echo __('Just complete the steps below:', 'grozomart'); ?></h6>
+            <h6 class="grozomart-welcome-step-title"><?php echo __('Just complete the steps below:', 'grozomart'); ?></h6>
             <ul>
                 <li>
                     <span class="step-title">

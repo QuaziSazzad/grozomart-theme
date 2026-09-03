@@ -125,7 +125,7 @@ class Grozomart_Setup
 	public function body_classes($classes)
 	{
 		if ('boxed' === Grozomart_Helper::site_layout()) {
-			$classes[] = 'tekprof-boxed-layout';
+			$classes[] = 'grozomart-boxed-layout';
 		}
 
 		if (!empty(Grozomart_Helper::get_meta('grozomart_page_meta', 'body_class'))) {
@@ -138,9 +138,9 @@ class Grozomart_Setup
 
 
 		if (Grozomart_helper::get_option('site_border', false)) {
-			$classes[] = 'tekprof-site-border';
+			$classes[] = 'grozomart-site-border';
 		} else {
-			$classes[] = 'tekprof-site-border-none';
+			$classes[] = 'grozomart-site-border-none';
 		}
 
 		return $classes;

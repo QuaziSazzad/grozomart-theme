@@ -18,8 +18,8 @@ $max_input_time_requirements     = 120;
 $max_input_vars_requirements     = 3000;
 
 ?>
-<div class="tekprof-dashboard-pages tekprof-server-status-page">
-    <div class="tekprof-server-status-boxes">
+<div class="grozomart-dashboard-pages grozomart-server-status-page">
+    <div class="grozomart-server-status-boxes">
         <div class="status-box">
             <h4><?php esc_html_e('WordPress Setting', 'grozomart') ?>:</h4>
             <div class="status-lists">
