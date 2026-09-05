@@ -10762,6 +10762,244 @@ span {
   color: var(--white);
 }
 
+/* Core's Tag Cloud widget/block (legacy .tagcloud with inline font-size,
+   or the block's .wp-block-tag-cloud) render tags at varying sizes with
+   no border/background. Normalize any tag-cloud markup in the sidebar to
+   match the Grozomart Tags widget above, regardless of which widget/block
+   produced it. */
+.main-sideber .widget .tagcloud a,
+.main-sideber .widget .wp-block-tag-cloud a {
+  font-size: 14px !important;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 18px;
+  border: 1px solid rgba(6, 76, 80, 0.1);
+  border-radius: 10px;
+  background-color: rgb(246, 246, 246);
+  padding: 7px 15px;
+}
+
+@media (max-width: 1199px) {
+  .main-sideber .widget .tagcloud a,
+  .main-sideber .widget .wp-block-tag-cloud a {
+    margin-right: 25px;
+  }
+}
+
+.main-sideber .widget .tagcloud a:last-child,
+.main-sideber .widget .wp-block-tag-cloud a:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.main-sideber .widget .tagcloud a:hover,
+.main-sideber .widget .wp-block-tag-cloud a:hover {
+  background-color: var(--theme);
+  color: var(--white);
+}
+
+/* Native <select> dropdowns rendered by core/WooCommerce widgets and blocks
+   (Categories, Archives, Calendar, product-cat dropdown, etc.) render with
+   plain browser chrome. Reset the native appearance and give every select
+   in the sidebar the same bordered/rounded look as the rest of the widgets,
+   with a custom chevron drawn in CSS instead of the browser's own arrow. */
+.main-sideber .widget select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 50px;
+  padding: 0 40px 0 15px;
+  border: 1px solid rgba(6, 76, 80, 0.1);
+  border-radius: 10px;
+  background-color: rgb(246, 246, 246);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "TikTok Sans", sans-serif;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23064C50' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.main-sideber .widget select:focus {
+  outline: none;
+  border-color: var(--theme);
+}
+
+.main-sideber .widget select::-ms-expand {
+  display: none;
+}
+
+/* Legacy Search widget (core widget_search, .grozomart-search-form) and the
+   Categories widget's dropdown form: input with the submit button overlaid
+   on its right edge, same pattern as the working .search-widget rule above
+   (10625-10651) — reused here instead of a stacked block layout so a
+   generic form isn't assumed to lay out one specific way.
+   Scoped with :not(.search-widget) on the *widget wrapper* (not the form —
+   .search-widget form is not a valid :not() argument, it only accepts a
+   simple selector against the element itself) so the existing .search-widget
+   rule isn't double-applied, and :not(:has(.wp-block-search__inside-wrapper))
+   on the form itself so the block search's own flex layout below is left
+   alone (the wrapper div is a child of the form, so testing the form's own
+   class list would never have excluded it either). */
+.main-sideber .widget:not(.search-widget) form:not(:has(.wp-block-search__inside-wrapper)) {
+  position: relative;
+}
+
+.main-sideber .widget:not(.search-widget) form:not(:has(.wp-block-search__inside-wrapper)) input[type="text"],
+.main-sideber .widget:not(.search-widget) form:not(:has(.wp-block-search__inside-wrapper)) input[type="search"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 16px 70px 16px 20px;
+  border: 1px solid rgba(6, 76, 80, 0.1);
+  border-radius: 14px;
+  background-color: #F6F6F6;
+  color: #6F7783;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main-sideber .widget:not(.search-widget) form:not(:has(.wp-block-search__inside-wrapper)) input[type="submit"],
+.main-sideber .widget:not(.search-widget) form:not(:has(.wp-block-search__inside-wrapper)) button[type="submit"] {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  height: 44px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--theme);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Search block: keep input + button aligned on one row regardless of the
+   block's own outside/inside button-position variant. Selectors repeat
+   .wp-block-search__inside-wrapper (rather than relying on .widget alone)
+   purely to outrank the legacy overlay rule above on specificity, as a
+   safety net in browsers without :has() support. */
+.main-sideber .widget .wp-block-search__inside-wrapper {
+  align-items: center;
+}
+
+.main-sideber .widget .wp-block-search__inside-wrapper .wp-block-search__input {
+  position: static;
+  box-sizing: border-box;
+  width: auto;
+  height: 50px;
+  margin: 0;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+.main-sideber .widget .wp-block-search__inside-wrapper .wp-block-search__button {
+  position: static;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 0;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.main-sideber .widget form input[type="submit"]:hover,
+.main-sideber .widget form button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* Core's Categories widget/block (cat-item <li>, with a nested <ul
+   class="children"> for child terms) has no spacing of its own, unlike the
+   Grozomart Categories widget's .categories-list above (10700-10726) — the
+   test data's Parent/Child/Grandchild hierarchy shows every level jammed
+   together with zero gap. Reuse the same row/divider treatment, plus real
+   indentation for nested levels so the hierarchy stays readable. */
+.main-sideber .widget ul.wp-block-categories-list > li,
+.main-sideber .widget ul.wp-block-categories-list li.cat-item,
+.main-sideber .widget .widget_categories ul > li.cat-item {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.main-sideber .widget ul.wp-block-categories-list > li:not(:last-child),
+.main-sideber .widget .widget_categories > ul > li.cat-item:not(:last-child) {
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(6, 76, 80, 0.1);
+  padding-bottom: 15px;
+}
+
+.main-sideber .widget li.cat-item a,
+.main-sideber .widget ul.wp-block-categories-list li a {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main-sideber .widget li.cat-item a:hover,
+.main-sideber .widget ul.wp-block-categories-list li a:hover {
+  color: var(--header);
+}
+
+.main-sideber .widget li.cat-item ul.children,
+.main-sideber .widget ul.wp-block-categories-list ul.wp-block-categories-list {
+  display: block;
+  margin: 12px 0 0;
+  padding-left: 18px;
+  border-left: 1px solid rgba(6, 76, 80, 0.1);
+}
+
+.main-sideber .widget li.cat-item ul.children li.cat-item,
+.main-sideber .widget ul.wp-block-categories-list ul.wp-block-categories-list li {
+  font-size: 15px;
+}
+
+.main-sideber .widget li.cat-item ul.children li.cat-item:not(:last-child),
+.main-sideber .widget ul.wp-block-categories-list ul.wp-block-categories-list li:not(:last-child) {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(6, 76, 80, 0.08);
+}
+
+/* WooCommerce's product-category widget renders via select2, which hides
+   the native <select> and draws its own span-based control — style that
+   rendered control to match the plain selects above instead. */
+.main-sideber .widget .select2-container {
+  width: 100% !important;
+}
+
+.main-sideber .widget .select2-container .select2-selection--single {
+  height: 50px;
+  padding: 0 40px 0 15px;
+  border: 1px solid rgba(6, 76, 80, 0.1);
+  border-radius: 10px;
+  background-color: rgb(246, 246, 246);
+}
+
+.main-sideber .widget .select2-container .select2-selection--single .select2-selection__rendered {
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.main-sideber .widget .select2-container .select2-selection--single .select2-selection__arrow {
+  height: 50px;
+  right: 15px;
+}
+
+.main-sideber .widget .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: var(--theme) transparent transparent transparent;
+}
+
 .main-sideber .single-sideber-widget .deal-img {
   position: relative;
   height: 470px;
