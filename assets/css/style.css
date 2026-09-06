@@ -5588,19 +5588,34 @@ span {
   height: 30px;
 }
 
+/* A native range thumb's centre travels from half-a-thumb (9px) in from the
+   left edge to 9px in from the right — it never reaches the element's true
+   0%/100%. The track and the fill are inset by that same 9px so both handles
+   line up with the ends of the bar instead of sitting inside it, and the
+   fill's own left/width percentages (set in theme.js) are resolved against
+   this inset box rather than the full wrapper width. */
 .shop-sidebar-area .slider-track {
   position: absolute;
   top: 12px;
-  left: 0;
-  right: 0;
+  left: 9px;
+  right: 9px;
   height: 4px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 30px;
 }
 
-.shop-sidebar-area .slider-range {
+.shop-sidebar-area .slider-range-track {
   position: absolute;
   top: 12px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  pointer-events: none;
+}
+
+.shop-sidebar-area .slider-range {
+  position: absolute;
+  top: 0;
   height: 4px;
   background: var(--theme);
   border-radius: 30px;
@@ -5609,12 +5624,21 @@ span {
 .shop-sidebar-area .slider-wrapper input[type=range] {
   position: absolute;
   width: 100%;
+  height: 18px;
   pointer-events: none;
+  /* appearance:none strips the native widget look but NOT the input's own
+     default border, which Chrome still paints as a box around the full
+     width of the element. */
   appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
   background: none;
-  top: 6px;
+  padding: 0;
+  top: 50%;
   left: 0;
   margin: 0;
+  transform: translateY(-50%);
   z-index: 9;
 }
 

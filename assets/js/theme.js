@@ -437,36 +437,42 @@
     /* ================================
        Additional Quantity Controls Js Start
     ================================ */
-        const inputs = document.querySelectorAll('#qty, #qty2, #qty3');
-        const btnminus = document.querySelectorAll('.qtyminus');
-        const btnplus = document.querySelectorAll('.qtyplus');
+        /**
+         * Delegated and scoped to each .qty group rather than matching a
+         * fixed list of ids (#qty, #qty2, #qty3) and pairing buttons to
+         * inputs by index. The old approach only worked for the static
+         * markup's hardcoded ids, so any stepper rendered dynamically — the
+         * Shop Details widget gives its input a per-instance id so several
+         * can share a page — was never wired up at all, and a page with an
+         * uneven number of steppers paired buttons to the wrong input.
+         */
+        $documentOn.on('click', '.qtyminus, .qtyplus', function (e) {
+            e.preventDefault();
 
-        if (inputs.length > 0 && btnminus.length > 0 && btnplus.length > 0) {
-        inputs.forEach(function(input, index) {
-            const min = Number(input.getAttribute('min')) || 0;
-            const max = Number(input.getAttribute('max')) || 9999;
+            const button = this;
+            const group = button.closest('.qty') || button.parentNode;
+            const input = group ? group.querySelector('input[type="number"]') : null;
+
+            if (!input) {
+                return;
+            }
+
+            const min = input.hasAttribute('min') ? Number(input.getAttribute('min')) : 0;
+            const max = input.hasAttribute('max') && input.getAttribute('max') !== '' ? Number(input.getAttribute('max')) : Infinity;
             const step = Number(input.getAttribute('step')) || 1;
 
-            function qtyminus(e) {
-                e.preventDefault();
-                let current = Number(input.value);
-                let newval = current - step;
-                if (newval < min) newval = min;
-                input.value = newval;
-            }
+            let value = Number(input.value) || min;
+            value += button.classList.contains('qtyplus') ? step : -step;
 
-            function qtyplus(e) {
-                e.preventDefault();
-                let current = Number(input.value);
-                let newval = current + step;
-                if (newval > max) newval = max;
-                input.value = newval;
-            }
+            if (value < min) value = min;
+            if (value > max) value = max;
 
-            btnminus[index].addEventListener('click', qtyminus);
-            btnplus[index].addEventListener('click', qtyplus);
+            input.value = value;
+
+            // WooCommerce (and any other listener) watches for a real change
+            // before re-reading the quantity.
+            input.dispatchEvent(new Event('change', { bubbles: true }));
         });
-    }
 
 
       // Quantity increment and decrement
@@ -528,38 +534,70 @@
       Price Ranage Js Start
     ================================ */
 
-     const $min = $(".range-min");
-        const $max = $(".range-max");
-        const $text = $(".price-value span");
-        const $wrapper = $(".slider-wrapper");
+    /**
+     * Scoped per .slider-wrapper: a page can have more than one dual-range
+     * price slider (e.g. the Shop widget's Layout Two placed twice, or the
+     * Elementor editor re-running this script inside its preview iframe
+     * alongside the parent frame). The previous version used page-global
+     * selectors ($(".range-min")/$(".range-max")/$(".price-value span")),
+     * so .val() only ever read the FIRST slider on the page regardless of
+     * which one the shopper dragged, and every wrapper's .slider-range got
+     * sized from that one shared value — every slider beyond the first
+     * appeared stuck. Each wrapper now tracks and updates only its own
+     * inputs/text/fill.
+     */
+    $(".slider-wrapper").each(function () {
+        const $wrapper = $(this);
+        if ($wrapper.data("range-slider-inited")) {
+            return;
+        }
+        $wrapper.data("range-slider-inited", true);
 
-        $wrapper.append('<div class="slider-range"></div>');
+        const $min = $wrapper.find(".range-min");
+        const $max = $wrapper.find(".range-max");
+        const $text = $wrapper.closest(".price-filter-widget").find(".price-value span");
+
+        // The fill lives inside an inset positioning context (see
+        // .slider-range-track in the CSS) so its percentages measure the
+        // thumb's real travel distance, not the wrapper's full width.
+        $wrapper.find(".slider-range, .slider-range-track").remove();
+        $wrapper.append('<div class="slider-range-track"><div class="slider-range"></div></div>');
+        const $range = $wrapper.find(".slider-range");
 
         function updateSlider() {
-
-            let minVal = parseInt($min.val());
-            let maxVal = parseInt($max.val());
+            let minVal = parseInt($min.val(), 10);
+            let maxVal = parseInt($max.val(), 10);
 
             if (minVal > maxVal - 10) {
                 minVal = maxVal - 10;
                 $min.val(minVal);
             }
 
-            const max = parseInt($min.attr("max"));
+            /**
+             * Both inputs share the same bounds (e.g. min="2" max="90" for
+             * a real price range, not always 0-based) — position along the
+             * track is (value - bound_min) / (bound_max - bound_min), not
+             * value / bound_max. Using bound_max alone as the divisor was
+             * wrong whenever the floor wasn't 0, which shifted the fill.
+             */
+            const boundMin = parseInt($min.attr("min"), 10);
+            const boundMax = parseInt($min.attr("max"), 10);
+            const span = boundMax - boundMin;
+            const minPct = ((minVal - boundMin) / span) * 100;
+            const maxPct = ((maxVal - boundMin) / span) * 100;
 
-            $(".slider-range").css({
-                left: (minVal / max) * 100 + "%",
-                width: ((maxVal - minVal) / max) * 100 + "%"
+            $range.css({
+                left: minPct + "%",
+                width: (maxPct - minPct) + "%"
             });
 
             $text.text(`$${minVal} – $${maxVal}`);
         }
 
-        $(document).on("input", ".range-min, .range-max", function () {
-            updateSlider();
-        });
+        $wrapper.on("input", ".range-min, .range-max", updateSlider);
 
         updateSlider();
+    });
 
 
 
