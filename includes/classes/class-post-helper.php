@@ -20,7 +20,29 @@ class Grozomart_Post_Helper
 	?>
 		<ul<?php if ($list_class) : ?> class="<?php echo esc_attr($list_class); ?>"<?php endif; ?>>
 			<?php if (! empty($categories)) : ?>
-				<li><?php echo esc_html($categories[0]->name); ?></li>
+				<li>
+					<?php
+					/**
+					 * Every category the post is in, each linked to its archive.
+					 *
+					 * Deliberately not truncated. The theme-unit-test data has a
+					 * post in ~60 categories, which makes this row wrap over
+					 * several lines — that is accepted, whereas collapsing the
+					 * list to "+N more" would hide taxonomy terms the theme is
+					 * expected to output, and the hidden ones would be
+					 * unreachable.
+					 */
+					$category_links = [];
+					foreach ($categories as $category) {
+						$category_links[] = sprintf(
+							'<a href="%1$s">%2$s</a>',
+							esc_url(get_category_link($category->term_id)),
+							esc_html($category->name)
+						);
+					}
+					echo wp_kses(implode(', ', $category_links), ['a' => ['href' => []]]);
+					?>
+				</li>
 				<li>।</li>
 			<?php endif; ?>
 			<li>

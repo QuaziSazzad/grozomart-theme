@@ -9967,9 +9967,17 @@ span {
   margin-top: 30px;
 }
 
+/* Same meta row as the single post — see .news-list-2 for why it wraps. */
 .news-wrapper-in .news-content .news-items .news-content ul {
-  display: inline-flex;
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 15px;
+  max-width: 100%;
+}
+
+.news-wrapper-in .news-content .news-items .news-content ul > li {
+  min-width: 0;
 }
 
 .news-wrapper-in .news-content .news-items .news-content ul li span {
@@ -10092,10 +10100,28 @@ span {
   }
 }
 
+/*
+ * Post meta: categories │ author │ date.
+ *
+ * `inline-flex` with the default `nowrap` forced all items onto one line, so a
+ * post in many categories (the unit-test data has one in 63) stretched the row
+ * past its container and squeezed the author and date into a narrow column
+ * beside the category block. `flex: wrap` lets them flow onto the next line
+ * instead, and `max-width: 100%` keeps the row inside the container.
+ */
 .news-details-section-in .news-details-top-area .news-list-2 {
-  display: inline-flex;
-  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 15px;
+  max-width: 100%;
   margin-top: 15px;
+}
+
+/* The category cell is the only part that can grow; let it wrap internally
+   rather than push the separators, author and date out of the row. */
+.news-details-section-in .news-details-top-area .news-list-2 > li {
+  min-width: 0;
 }
 
 .news-details-section-in .news-details-top-area .news-list-2 li span {
@@ -10306,14 +10332,25 @@ span {
   }
 }
 
+/*
+ * Prev/next post links. `flex: 0 1 auto` lets each side take only the width
+ * its own title needs, rather than a fixed max-width or a forced equal half:
+ * a short title no longer reserves space a longer one on the other side is
+ * being wrapped for. The row's space-between then puts whatever is genuinely
+ * left over between them instead of a large fixed hole.
+ */
 .news-details-wrapper-in .news-details-content .soil-from .first-from {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .news-details-wrapper-in .news-details-content .soil-from .first-from .icon {
   width: 40px;
+  min-width: 40px;
+  flex: 0 0 40px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -10350,12 +10387,21 @@ span {
   display: flex;
   align-items: center;
   gap: 20px;
-  max-width: 230px;
+  flex: 0 1 auto;
+  min-width: 0;
+  justify-content: flex-end;
+  text-align: right;
 }
 
+/*
+ * `width: 100%; max-width: 40px` gave the circle no minimum, so once the title
+ * beside it claimed its space the flex row shrank the icon to a 12px-wide oval.
+ * Pin the width and stop it flexing, matching .first-from .icon.
+ */
 .news-details-wrapper-in .news-details-content .soil-from .sec-from .icon {
-  width: 100%;
-  max-width: 40px;
+  width: 40px;
+  min-width: 40px;
+  flex: 0 0 40px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -10382,6 +10428,20 @@ span {
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+/*
+ * Keep both links on one line. Two long post titles plus their icons need more
+ * width than the column has (measured: 527px of content in a 516px row), so a
+ * long title is clamped with an ellipsis rather than wrapping and making one
+ * side twice as tall as the other. The full title stays available via the
+ * link's own title attribute and the href.
+ */
+.news-details-wrapper-in .news-details-content .soil-from .first-from .content .title-5,
+.news-details-wrapper-in .news-details-content .soil-from .sec-from .content .title-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .news-details-wrapper-in .news-details-content .client-info-area {
