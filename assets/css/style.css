@@ -71,11 +71,21 @@ button {
 }
 
 input:focus {
-  color: var(--white);
   outline: none;
 }
 
-input {
+/*
+ * White text was applied to EVERY input on the site. That only suits inputs
+ * sitting on a dark panel (the header search, the footer newsletter), but it
+ * also hit inputs on white backgrounds — the cart's quantity field rendered
+ * white-on-white, so the number looked missing even though the value was
+ * there. Scope it to the dark contexts that actually want it.
+ */
+.header-section input,
+.header-section-two input,
+.offcanvas__wrapper input,
+.footer-section input,
+.footer-widget-wrapper input {
   color: var(--white);
 }
 

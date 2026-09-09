@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.0.2
+Version: 1.1.1
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -843,16 +843,29 @@ pre {
 	border-color: var(--header);
 }
 
-.blog-details-content ul,
-.comments-area ul {
+/*
+ * Prose lists inside post content. The cart/checkout pages also render inside
+ * .blog-details-content, so this used to hit WooCommerce block lists too: it
+ * flattened .wc-block-grid__products from flex to block (the 4-column product
+ * grid collapsed into one column, since the children's `flex: 1 0 25%` needs a
+ * flex parent) and put disc bullets beside each product. Exclude the block
+ * lists so they keep their own layout.
+ */
+.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]),
+.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) {
 	display: block;
 	list-style-type: disc;
 	padding-left: 2rem;
 }
 
-.blog-details-content ul li,
-.comments-area ul li {
+.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]) > li,
+.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) > li {
 	list-style-type: disc;
+}
+
+/* Breathing room between the "New in store" heading and the product grid. */
+.wp-block-woocommerce-empty-cart-block .wp-block-heading + .wc-block-grid {
+	margin-top: 30px;
 }
 
 .blog-details-content Ol li,
@@ -4279,18 +4292,29 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-image {
-	width: 45px;
-	min-width: 45px;
+	width: 60px;
+	min-width: 60px;
+	max-width: 60px;
 	margin-right: 15px;
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-image a {
-	display: inline-block;
+	display: block;
 }
 
+/*
+ * `width: inherit` alone left the height at the image's natural size (the
+ * source is 300x300), so each thumbnail rendered as a tall block that filled
+ * the drawer. Constrain both axes and crop to the box instead.
+ */
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-image img {
 	margin: 0;
-	width: inherit;
+	display: block;
+	width: 100%;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 8px;
+	background: #F5F5F5;
 }
 
 .widget-cart-sidebar .widget_shopping_cart .widget_shopping_cart_content ul.cart_list .cart-product-meta {
@@ -4691,20 +4715,74 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 /* Quantity Selector */
+/*
+ * Cart block quantity stepper.
+ *
+ * WooCommerce's own blocks/cart.css loads after this file and lays the control
+ * out as a fixed 107px flex row (− input +). The previous rules here fought
+ * that: `width: fit-content` collapsed the box while the buttons kept their
+ * min-width, pushing − and + outside it, and the divider borders landed in the
+ * wrong place.
+ *
+ * These rules work with that layout instead of replacing it. !important is
+ * needed because blocks/cart.css wins on load order.
+ */
 .wc-block-components-quantity-selector {
-	display: flex;
+	display: flex !important;
 	align-items: center;
-	border: 1px solid #e2e2e2;
-	border-radius: 4px;
-	width: fit-content;
+	border: 1px solid rgba(6, 76, 80, 0.15) !important;
+	border-radius: 8px;
+	background: transparent !important;
+	overflow: hidden;
+	width: 128px !important;
+	max-width: 128px;
+	height: 44px;
 	margin-bottom: 10px;
 }
 
-.wc-block-components-quantity-selector__input {
-	width: 40px;
+/*
+ * The number was invisible because block CSS sets `color: currentColor`, which
+ * inherited a colour that didn't read against the field. Set it explicitly.
+ *
+ * Two separate rules had to be beaten here:
+ *
+ * 1. blocks/cart.css declares this with the exact same selector and loads
+ *    after the theme, so on a specificity tie it wins — hence !important on
+ *    every property it also sets (its `min-width: 40px` is what squeezed the
+ *    + button out of the box).
+ * 2. This file's own `body.woocommerce-page input` rule (see ~line 1750) sets
+ *    `height: 55px` on every WooCommerce input. That is taller than this 44px
+ *    box, and the box is `overflow: hidden`, so the number was clipped out of
+ *    sight entirely. Its two-element-plus-class selector outranks a plain
+ *    class chain, so the body prefix below is needed to win — !important alone
+ *    would not have been enough for height.
+ */
+body.woocommerce .wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input,
+body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input,
+.wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input {
+	flex: 1 1 auto !important;
+	min-width: 0 !important;
+	width: auto !important;
+	height: 100% !important;
+	/*
+	 * Storzen's main.css has a global `input, select, textarea, .nice-select,
+	 * .form-control { padding: 18px 30px }`. In this 60px-wide field that is
+	 * 60px of horizontal padding, leaving zero room for the digit — the value
+	 * was present and correctly coloured the whole time, just padded out of
+	 * view. Reset it here rather than editing the plugin, which an update
+	 * would overwrite.
+	 */
+	padding: 0 !important;
 	text-align: center;
-	border: none;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	color: var(--header) !important;
+	font-size: 15px !important;
+	font-weight: 600;
+	line-height: 1 !important;
 	-moz-appearance: textfield;
+	appearance: textfield;
 }
 
 .wc-block-components-quantity-selector__input::-webkit-outer-spin-button,
@@ -4713,25 +4791,76 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	margin: 0;
 }
 
-.wc-block-components-quantity-selector__button {
+/*
+ * Keep both buttons inside the box and evenly sized. flex: 0 0 34px pins the
+ * width so neither can be shrunk away — block CSS gives them min-width: 30px
+ * and lets them flex, which is how + ended up pushed outside the border.
+ */
+.wc-block-components-quantity-selector .wc-block-components-quantity-selector__button {
+	flex: 0 0 34px !important;
+	width: 34px !important;
+	min-width: 34px !important;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: none;
-	border: none;
-	padding: 5px 8px;
+	border: none !important;
+	padding: 0 !important;
+	margin: 0;
 	cursor: pointer;
-	color: #666;
-	transition: color 0.3s ease;
+	opacity: 1;
+	color: var(--header);
+	font-size: 18px;
+	line-height: 1;
+	transition: color 0.3s ease, background 0.3s ease;
 }
 
-.wc-block-components-quantity-selector__button:hover {
-	color: var(--theme);
+.wc-block-components-quantity-selector .wc-block-components-quantity-selector__button:hover {
+	color: var(--white);
+	background: var(--theme);
+	opacity: 1;
 }
 
-.wc-block-components-quantity-selector__button--minus {
-	border-right: 1px solid #e2e2e2;
+.wc-block-components-quantity-selector .wc-block-components-quantity-selector__button:disabled {
+	opacity: 0.35;
+	cursor: default;
 }
 
-.wc-block-components-quantity-selector__button--plus {
-	border-left: 1px solid #e2e2e2;
+.wc-block-components-quantity-selector .wc-block-components-quantity-selector__button:disabled:hover {
+	background: none;
+	color: var(--header);
+}
+
+/*
+ * Cart/checkout block checkboxes.
+ *
+ * Same root cause as the quantity field above: Storzen's global
+ * `input, select, textarea { padding: 18px 30px }` also lands on these. A
+ * checkbox has no intrinsic size, so that padding alone inflated WooCommerce's
+ * intended 20x20 box to 62x38 — the pale oversized rectangle beside "Add a
+ * note to your order". Reset the padding and restore the block's own size.
+ */
+.wc-block-components-checkbox .wc-block-components-checkbox__input[type="checkbox"] {
+	width: 20px !important;
+	min-width: 20px !important;
+	height: 20px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	flex: 0 0 20px;
+	border: 1px solid rgba(6, 76, 80, 0.3) !important;
+	border-radius: 4px;
+	background-color: var(--white);
+}
+
+.wc-block-components-checkbox .wc-block-components-checkbox__input[type="checkbox"]:checked {
+	background-color: var(--theme) !important;
+	border-color: var(--theme) !important;
+}
+
+/* The tick is an overlaid SVG; WooCommerce colours it via `stroke`. */
+.wc-block-components-checkbox .wc-block-components-checkbox__mark {
+	fill: var(--white);
 }
 
 /* Add to Cart Button */
