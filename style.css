@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.1.5
+Version: 1.1.8
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -1135,21 +1135,53 @@ big {
 	line-height: 108.333%;
 }
 
-.widget.widget_block h2 {
-	margin-bottom: 20px;
-	position: relative;
-	padding-bottom: 12px;
+/*
+ * Sidebar widget consistency.
+ *
+ * Block widgets ignore the sidebar's before_title/after_title, so they emit
+ * <h2 class="wp-block-heading"> while classic widgets emit the theme's
+ * <div class="widget-title"><span class="title">. Only the block heading was
+ * styled, which left classic widgets with no gap between them (margin 0) and
+ * a 14px title instead of 20px.
+ *
+ * Style both title shapes together so every widget in the sidebar matches,
+ * whichever way WordPress renders it. The underline accent that used to sit
+ * under these titles is switched off here rather than deleted, so the one
+ * ::after definition still covers both shapes if it is ever wanted back.
+ */
+.main-sideber .widget,
+.sidebar .widget {
+	margin-bottom: 35px;
 }
 
+.main-sideber .widget:last-child,
+.sidebar .widget:last-child {
+	margin-bottom: 0;
+}
+
+.widget.widget_block h2,
+.widget .widget-title {
+	margin: 0 0 18px;
+	padding-bottom: 0;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--header);
+}
+
+/* The classic markup nests the text in a span, which carries the small
+   default size — bring it up to the heading's own size. */
+.widget .widget-title .title {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+/* No underline accent under sidebar widget titles. */
 .widget.widget_block h2::after,
-.widget-title::after {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	content: '';
-	width: 50px;
-	height: 2px;
-	background: #020626;
+.widget .widget-title::after {
+	content: none;
 }
 
 .sidebar .widget p {
@@ -1465,15 +1497,6 @@ span.separator i.fa {
 	font-weight: 400;
 }
 
-.widget-title::after {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	content: '';
-	width: 50px;
-	height: 2px;
-	background: #020626;
-}
 
 .next-prev-blog {
 	margin-top: 5px;
@@ -5045,7 +5068,7 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
    `single-sideber-widget`, so they miss the sidebar's spacing entirely and
    stack flush against each other. Give them the same rhythm. */
 .main-sideber .widget_block {
-	margin-bottom: 48px;
+	margin-bottom: 35px;
 }
 
 @media (max-width: 1199px) {
@@ -5059,11 +5082,12 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 }
 
 /* Headings these widgets emit themselves, matching .single-sideber-widget .title */
+/* Matches the shared widget-title spacing above (18px). */
 .main-sideber .widget_block h2,
 .main-sideber .widget_block h3,
 .main-sideber .widget_block .wp-block-heading {
 	margin-top: 0;
-	margin-bottom: 24px;
+	margin-bottom: 18px;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 1.3;
