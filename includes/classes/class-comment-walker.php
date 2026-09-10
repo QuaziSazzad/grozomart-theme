@@ -72,11 +72,11 @@ if (! class_exists('Grozomart_Comment_Walker')) {
             ?>
             <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
                 <div class="<?php echo esc_attr($comment_class); ?>" id="comment-<?php comment_ID(); ?>">
-                    <div class="image">
-                        <?php echo get_avatar($comment->comment_author_email, 80); ?>
+                    <div class="image rounded-circle">
+                        <?php echo get_avatar($comment->comment_author_email, 100); ?>
                     </div>
                     <div class="content">
-                        <h4>
+                        <h4 class="commenter-info">
                             <span><?php printf('%s', get_comment_author_link()); ?></span> - <?php printf('%1$s', get_comment_date()); ?>
                         </h4>
                         <div class="single-box">

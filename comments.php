@@ -20,7 +20,7 @@ if (post_password_required()) {
 
 <div id="comments" class="comment-area wow fadeInUp" data-wow-delay=".6s">
 	<?php if (have_comments()): ?>
-		<h3>
+		<h3 class="comment-title">
 			<?php
 			comments_number(
 				esc_html__('0 Customer Comments', 'grozomart'),

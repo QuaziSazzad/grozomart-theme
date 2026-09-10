@@ -9976,7 +9976,7 @@ span {
   max-width: 100%;
 }
 
-.news-wrapper-in .news-content .news-items .news-content ul > li {
+.news-wrapper-in .news-content .news-items .news-content ul>li {
   min-width: 0;
 }
 
@@ -10120,7 +10120,7 @@ span {
 
 /* The category cell is the only part that can grow; let it wrap internally
    rather than push the separators, author and date out of the row. */
-.news-details-section-in .news-details-top-area .news-list-2 > li {
+.news-details-section-in .news-details-top-area .news-list-2>li {
   min-width: 0;
 }
 
@@ -10514,20 +10514,20 @@ span {
   }
 }
 
-.news-details-wrapper-in .news-details-content .comment-area h3 {
+.news-details-wrapper-in .news-details-content .comment-area h3.comment-title {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
 }
 
 @media (max-width: 1199px) {
-  .news-details-wrapper-in .news-details-content .comment-area h3 {
+  .news-details-wrapper-in .news-details-content .comment-area h3.comment-title {
     font-size: 25px;
   }
 }
 
 @media (max-width: 575px) {
-  .news-details-wrapper-in .news-details-content .comment-area h3 {
+  .news-details-wrapper-in .news-details-content .comment-area h3.comment-title {
     font-size: 20px;
   }
 }
@@ -10554,14 +10554,14 @@ span {
   max-width: initial;
 }
 
-.news-details-wrapper-in .news-details-content .comment-area .blog-single-comment .content h4 {
+.news-details-wrapper-in .news-details-content .comment-area .blog-single-comment .content h4.commenter-info {
   color: var(--text);
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: 500;
 }
 
-.news-details-wrapper-in .news-details-content .comment-area .blog-single-comment .content h4 span {
+.news-details-wrapper-in .news-details-content .comment-area .blog-single-comment .content h4.commenter-info span {
   color: var(--header);
   font-size: 18px;
   font-weight: 500;
@@ -10876,6 +10876,7 @@ span {
 }
 
 @media (max-width: 1199px) {
+
   .main-sideber .widget .tagcloud a,
   .main-sideber .widget .wp-block-tag-cloud a {
     margin-right: 25px;
@@ -11013,17 +11014,17 @@ span {
    test data's Parent/Child/Grandchild hierarchy shows every level jammed
    together with zero gap. Reuse the same row/divider treatment, plus real
    indentation for nested levels so the hierarchy stays readable. */
-.main-sideber .widget ul.wp-block-categories-list > li,
+.main-sideber .widget ul.wp-block-categories-list>li,
 .main-sideber .widget ul.wp-block-categories-list li.cat-item,
-.main-sideber .widget .widget_categories ul > li.cat-item {
+.main-sideber .widget .widget_categories ul>li.cat-item {
   display: block;
   font-size: 16px;
   font-weight: 400;
   color: var(--text);
 }
 
-.main-sideber .widget ul.wp-block-categories-list > li:not(:last-child),
-.main-sideber .widget .widget_categories > ul > li.cat-item:not(:last-child) {
+.main-sideber .widget ul.wp-block-categories-list>li:not(:last-child),
+.main-sideber .widget .widget_categories>ul>li.cat-item:not(:last-child) {
   margin-bottom: 15px;
   border-bottom: 1px solid rgba(6, 76, 80, 0.1);
   padding-bottom: 15px;

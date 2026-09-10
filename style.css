@@ -120,10 +120,10 @@ Text Domain: grozomart
 	top: 6px;
 }
 
-.blog-details-content ul,
+.news-details-content ul,
 .comments-area ul,
 .comments-area ol,
-.blog-details-content ol {
+.news-details-content ol {
 	margin: 0 0 .5em .6em;
 }
 
@@ -214,7 +214,7 @@ ul.wp-block-page-list {
 
 
 .wp-block-post-comments-form input[type=submit],
-.blog-details-content .form-submit .submit {
+.news-details-content .form-submit .submit {
 	display: inline-block;
 	vertical-align: middle;
 	-webkit-appearance: none;
@@ -242,7 +242,7 @@ ul.wp-block-page-list {
 }
 
 .wp-block-post-comments-form input[type=submit]:hover,
-.blog-details-content .form-submit .submit:hover {
+.news-details-content .form-submit .submit:hover {
 	color: #fff;
 	background-color: #000;
 }
@@ -278,7 +278,7 @@ p.form-submit {
 	color: var(--theme);
 }
 
-.blog-details-content ul.wp-block-social-links,
+.news-details-content ul.wp-block-social-links,
 .wp-block-latest-posts.wp-block-latest-posts__list,
 ol.wp-block-latest-comments,
 ul.wp-block-rss.wp-block-rss {
@@ -342,19 +342,19 @@ ul.wp-block-rss.wp-block-rss {
 	text-transform: capitalize;
 }
 
-.blog-details-content a,
+.news-details-content a,
 .comment-content a,
-.blog-details-content blockquote:not([class*=has-]) cite {
+.news-details-content blockquote:not([class*=has-]) cite {
 	color: var(--header);
 }
 
-.blog-details-content a:hover,
+.news-details-content a:hover,
 .comment-content a:hover,
-.blog-details-content blockquote:not([class*=has-]) cite:hover {
+.news-details-content blockquote:not([class*=has-]) cite:hover {
 	color: var(--theme);
 }
 
-.blog-details-content .project-tags a:hover {
+.news-details-content .project-tags a:hover {
 	color: #fff;
 }
 
@@ -407,7 +407,7 @@ ul.wp-block-rss.wp-block-rss {
 }
 
 .wp-block-search .wp-block-search__button:hover,
-.blog-details-content .wp-block-search .wp-block-search__button:hover,
+.news-details-content .wp-block-search .wp-block-search__button:hover,
 .sidebar .widget .wp-block-search .wp-block-search__button:hover,
 .sidebar__single .wp-block-search .wp-block-search__button:hover {
 	background-color: var(--theme);
@@ -460,7 +460,7 @@ ul.wp-block-rss.wp-block-rss {
 	padding: 20px;
 }
 
-.blog-details-content .page-links {
+.news-details-content .page-links {
 	color: var(--header);
 	display: flex;
 	align-items: center;
@@ -471,8 +471,8 @@ ul.wp-block-rss.wp-block-rss {
 	margin: 0 0 1.5em;
 }
 
-.blog-details-content .page-links span,
-.blog-details-content .page-links a {
+.news-details-content .page-links span,
+.news-details-content .page-links a {
 	display: flex;
 	width: 40px;
 	height: 40px;
@@ -490,18 +490,18 @@ ul.wp-block-rss.wp-block-rss {
 	border: 1px solid rgba(6, 76, 80, 0.1);
 }
 
-.blog-details-content .page-links span {
+.news-details-content .page-links span {
 	background-color: var(--header);
 	color: #fff;
 }
 
-.blog-details-content .page-links a:hover {
+.news-details-content .page-links a:hover {
 	background-color: var(--theme);
 	color: #fff;
 	border: none;
 }
 
-.blog-details-content .wp-block-cover {
+.news-details-content .wp-block-cover {
 	margin-bottom: 30px;
 }
 
@@ -528,9 +528,9 @@ ul.wp-block-rss.wp-block-rss {
 	text-decoration: none;
 }
 
-.blog-details-content blockquote:not([class*=has-]),
+.news-details-content blockquote:not([class*=has-]),
 .comment-content blockquote,
-.blog-details-content .wp-block-quote {
+.news-details-content .wp-block-quote {
 	background-color: #FAF8F6;
 	border-left: 2px solid var(--header);
 	padding-left: 30px;
@@ -545,9 +545,9 @@ ul.wp-block-rss.wp-block-rss {
 	border-radius: 5px;
 }
 
-.blog-details-content blockquote:not([class*=has-])::before,
+.news-details-content blockquote:not([class*=has-])::before,
 .comment-content blockquote::before,
-.blog-details-content .wp-block-quote::before {
+.news-details-content .wp-block-quote::before {
 	content: '\f10d';
 	font-family: "Font Awesome 5 Pro";
 	font-weight: 900;
@@ -581,11 +581,11 @@ pre {
 }
 
 
-.blog-details-content .wp-block-button a {
+.news-details-content .wp-block-button a {
 	color: #fff;
 }
 
-.blog-details-content .wp-block-button a:hover {
+.news-details-content .wp-block-button a:hover {
 	background-color: var(--theme);
 	border-color: var(--theme);
 	color: var(--header);
@@ -601,11 +601,11 @@ pre {
 	margin-right: 30px;
 }
 
-.blog-details-content .blocks-gallery-caption {
+.news-details-content .blocks-gallery-caption {
 	margin-bottom: 24px;
 }
 
-.blog-details-content .blog-card-two__content {
+.news-details-content .blog-card-two__content {
 	padding-bottom: 0px;
 }
 
@@ -645,7 +645,7 @@ pre {
 }
 
 
-.blog-details-content .post-password-form input[type=password] {
+.news-details-content .post-password-form input[type=password] {
 	width: 200px;
 	height: 60px;
 	background-color: rgba(6, 76, 80, 0.1);
@@ -655,7 +655,7 @@ pre {
 	vertical-align: middle;
 }
 
-.blog-details-content .post-password-form input[type=submit] {
+.news-details-content .post-password-form input[type=submit] {
 	width: 120px;
 	height: 60px;
 	background-color: var(--theme);
@@ -672,17 +672,17 @@ pre {
 	border-radius: 0px;
 }
 
-.blog-details-content .post-password-form input[type=submit]:hover {
+.news-details-content .post-password-form input[type=submit]:hover {
 	background-color: var(--header);
 	color: #fff;
 }
 
 
 .comments-area ol ol,
-.blog-details-content ol ol,
-.blog-details-content ul ol,
-.blog-details-content ol ul,
-.blog-details-content ul ul,
+.news-details-content ol ol,
+.news-details-content ul ol,
+.news-details-content ol ul,
+.news-details-content ul ul,
 .comments-area ul ul {
 	margin-bottom: 0;
 }
@@ -832,48 +832,25 @@ pre {
 }
 
 
-.blog-details-content .wp-block-button a:hover {
+.news-details-content .wp-block-button a:hover {
 	background-color: var(--theme);
 	border-color: var(--theme);
 	color: #fff;
 }
 
-.blog-details-content .wp-block-button.is-style-outline.wp-block-button a {
+.news-details-content .wp-block-button.is-style-outline.wp-block-button a {
 	color: var(--header);
 	border-color: var(--header);
 }
 
-/*
- * Prose lists inside post content. The cart/checkout pages also render inside
- * .blog-details-content, so this used to hit WooCommerce block lists too: it
- * flattened .wc-block-grid__products from flex to block (the 4-column product
- * grid collapsed into one column, since the children's `flex: 1 0 25%` needs a
- * flex parent) and put disc bullets beside each product. Exclude the block
- * lists so they keep their own layout.
- */
-.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]),
-.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) {
-	display: block;
-	list-style-type: disc;
-	padding-left: 2rem;
-}
 
-.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"])>li,
-.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"])>li {
-	list-style-type: disc;
-}
 
-/* Breathing room between the "New in store" heading and the product grid. */
-.wp-block-woocommerce-empty-cart-block .wp-block-heading+.wc-block-grid {
-	margin-top: 30px;
-}
-
-.blog-details-content Ol li,
+.news-details-content Ol li,
 .comments-area ol li {
 	list-style-type: decimal;
 }
 
-.blog-details-content p {
+.news-details-content p {
 	line-height: 1.7;
 }
 
@@ -892,25 +869,25 @@ ul li.comment {
 }
 
 ul.is-responsive.wp-block-navigation,
-.blog-details-content ul.wp-block-post-template,
-.blog-details-content ul.wp-block-page-list,
+.news-details-content ul.wp-block-post-template,
+.news-details-content ul.wp-block-page-list,
 .comments-area ul.comment-list,
-.blog-details-content>ul:first-child {
+.news-details-content>ul:first-child {
 	padding-left: 0;
 	margin-left: 0;
 }
 
 .comments-area ul li.pingback,
 .comments-area ul li.trackback,
-.blog-details-content ol.wp-block-comment-template li,
-.blog-details-content ul.wp-block-post-template li,
-.blog-details-content ul.wp-block-page-list li,
-.blog-details-content ul.wp-block-categories-list li {
+.news-details-content ol.wp-block-comment-template li,
+.news-details-content ul.wp-block-post-template li,
+.news-details-content ul.wp-block-page-list li,
+.news-details-content ul.wp-block-categories-list li {
 	list-style: none;
 }
 
 
-.blog-details-content ul.post-categories {
+.news-details-content ul.post-categories {
 	padding-left: 5px;
 	margin-left: 0;
 }
@@ -1497,6 +1474,13 @@ p.logged-in-as {
 	border-radius: 12px;
 }
 
+.news-details-wrapper-in .news-details-content .comment-area .blog-single-comment .content {
+	flex: 1;
+	min-width: 0;
+	max-width: 100%;
+	overflow-wrap: break-word;
+}
+
 .news-details-content p {
 	line-height: 1.7;
 	margin-bottom: 1rem;
@@ -1506,6 +1490,11 @@ p.logged-in-as {
 	margin-top: 0;
 }
 
+.rounded-circle img {
+	border-radius: 50%;
+}
+
+.news-details-wrapper-in .news-details-content .news-details-img img,
 .news-wrapper-in .news-content .news-items .news-thumb {
 	margin-bottom: 30px;
 }
@@ -1691,11 +1680,11 @@ div.trusted-clients img {
 	}
 }
 
-.blog-details-content blockquote.grozomart-blockquote {
+.news-details-content blockquote.grozomart-blockquote {
 	border-left: 0
 }
 
-.blog-details-content blockquote.grozomart-blockquote::before {
+.news-details-content blockquote.grozomart-blockquote::before {
 	content: "";
 }
 
@@ -4795,18 +4784,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 }
 
 /* Quantity Selector */
-/*
- * Cart block quantity stepper.
- *
- * WooCommerce's own blocks/cart.css loads after this file and lays the control
- * out as a fixed 107px flex row (− input +). The previous rules here fought
- * that: `width: fit-content` collapsed the box while the buttons kept their
- * min-width, pushing − and + outside it, and the divider borders landed in the
- * wrong place.
- *
- * These rules work with that layout instead of replacing it. !important is
- * needed because blocks/cart.css wins on load order.
- */
+
 .wc-block-components-quantity-selector {
 	display: flex !important;
 	align-items: center;
@@ -4820,23 +4798,7 @@ body.woocommerce-cart .cart-collaterals .wc-proceed-to-checkout {
 	margin-bottom: 10px;
 }
 
-/*
- * The number was invisible because block CSS sets `color: currentColor`, which
- * inherited a colour that didn't read against the field. Set it explicitly.
- *
- * Two separate rules had to be beaten here:
- *
- * 1. blocks/cart.css declares this with the exact same selector and loads
- *    after the theme, so on a specificity tie it wins — hence !important on
- *    every property it also sets (its `min-width: 40px` is what squeezed the
- *    + button out of the box).
- * 2. This file's own `body.woocommerce-page input` rule (see ~line 1750) sets
- *    `height: 55px` on every WooCommerce input. That is taller than this 44px
- *    box, and the box is `overflow: hidden`, so the number was clipped out of
- *    sight entirely. Its two-element-plus-class selector outranks a plain
- *    class chain, so the body prefix below is needed to win — !important alone
- *    would not have been enough for height.
- */
+
 body.woocommerce .wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input,
 body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input,
 .wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input {
@@ -4873,8 +4835,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 
 /*
  * Keep both buttons inside the box and evenly sized. flex: 0 0 34px pins the
- * width so neither can be shrunk away — block CSS gives them min-width: 30px
- * and lets them flex, which is how + ended up pushed outside the border.
  */
 .wc-block-components-quantity-selector .wc-block-components-quantity-selector__button {
 	flex: 0 0 34px !important;
@@ -4915,11 +4875,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 /*
  * Cart/checkout block checkboxes.
  *
- * Same root cause as the quantity field above: Storzen's global
- * `input, select, textarea { padding: 18px 30px }` also lands on these. A
- * checkbox has no intrinsic size, so that padding alone inflated WooCommerce's
- * intended 20x20 box to 62x38 — the pale oversized rectangle beside "Add a
- * note to your order". Reset the padding and restore the block's own size.
  */
 .wc-block-components-checkbox .wc-block-components-checkbox__input[type="checkbox"] {
 	width: 20px !important;
@@ -5077,10 +5032,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 /************ ## Comment Form Custom Fixes *************/
 /*******************************************************/
 
-/* Core wraps the consent checkbox in a <p> carrying a 40px bottom margin,
-   which opens a large gap above the submit button. Collapse it and lay the
-   checkbox out inline with its label, matching the theme's other
-   .form-check rows. */
 .comment-form-wrap .form-check {
 	padding-left: 0;
 }
@@ -5120,10 +5071,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 /******** ## Sidebar Block Widget (unit test) **********/
 /*******************************************************/
 
-/* Block widgets (core blocks, and the Block Widgets Monster review plugin)
-   render with a `widget_block` wrapper instead of the theme's
-   `single-sideber-widget`, so they miss the sidebar's spacing entirely and
-   stack flush against each other. Give them the same rhythm. */
 .main-sideber .widget_block {
 	margin-bottom: 35px;
 }
@@ -5200,10 +5147,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 /*********** ## Product Card Image Fixes ***************/
 /*******************************************************/
 
-/* .shop-card-arrivals-items2 .thumb is a fixed 205px box, but its <img>
-   has no size constraint -- WooCommerce images at their natural size
-   overflow the card and break the grid. Contain them, matching the
-   object-fit: cover pattern used elsewhere in this stylesheet. */
 .shop-card-arrivals-items2 .thumb {
 	overflow: hidden;
 }
@@ -5214,11 +5157,26 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 	object-fit: contain;
 }
 
-/* Same guard for the left-column and best-seller cards, whose images
-   come from the same WooCommerce product thumbnails. */
+
 .shop-card-arrivals .thumb img,
 .shop-best-seller-items .thumb img,
 .shop-card-items .thumb img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* .news-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]),
+.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) {
+	display: block;
+	list-style-type: disc;
+	padding-left: 2rem;
+}
+
+.news-details-content ul:not([class*="wc-block"]):not([class*="wp-block"])>li,
+.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"])>li {
+	list-style-type: disc;
+}
+
+.wp-block-woocommerce-empty-cart-block .wp-block-heading+.wc-block-grid {
+	margin-top: 30px;
+} */
