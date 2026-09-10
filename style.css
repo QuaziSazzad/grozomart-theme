@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.1.8
+Version: 1.1.9
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -104,11 +104,11 @@ Text Domain: grozomart
 	padding: 20px 0;
 }
 
-.sticky .content {
+.sticky .title-2 {
 	position: relative;
 }
 
-.sticky .content::before {
+.sticky .title-2::before {
 	position: absolute;
 	right: 0px;
 	content: "";
@@ -117,7 +117,7 @@ Text Domain: grozomart
 	background-color: var(--theme);
 	z-index: 10;
 	clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 50%, 0 100%, 0 0);
-	top: 0px;
+	top: 6px;
 }
 
 .blog-details-content ul,
@@ -858,13 +858,13 @@ pre {
 	padding-left: 2rem;
 }
 
-.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]) > li,
-.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) > li {
+.blog-details-content ul:not([class*="wc-block"]):not([class*="wp-block"])>li,
+.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"])>li {
 	list-style-type: disc;
 }
 
 /* Breathing room between the "New in store" heading and the product grid. */
-.wp-block-woocommerce-empty-cart-block .wp-block-heading + .wc-block-grid {
+.wp-block-woocommerce-empty-cart-block .wp-block-heading+.wc-block-grid {
 	margin-top: 30px;
 }
 
@@ -1341,6 +1341,44 @@ big {
 	line-height: 30px;
 }
 
+/*
+ * RSS feed items. Nothing spaced these apart, so each entry's title, date,
+ * summary and author ran straight into the next entry as one block of text
+ * (measured: 0px between items, 0 margin on every inner part). Separate the
+ * entries and give the parts inside one a little breathing room.
+ */
+.widget.widget_rss ul li,
+.sidebar .widget.widget_rss ul li {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(6, 76, 80, 0.1);
+}
+
+.widget.widget_rss ul li:last-child,
+.sidebar .widget.widget_rss ul li:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.widget.widget_rss .rss-date {
+	display: block;
+	margin-top: 4px;
+	font-size: 14px;
+	color: var(--text);
+}
+
+.widget.widget_rss .rssSummary {
+	margin-top: 8px;
+}
+
+.widget.widget_rss cite {
+	display: block;
+	margin-top: 6px;
+	font-size: 14px;
+	color: var(--text);
+}
+
 
 .wp-block-archives-list li,
 .sidebar .widget.widget_archive li {
@@ -1452,6 +1490,25 @@ p.logged-in-as {
 }
 
 /* end unit test */
+.main-sideber img,
+.entry-content .wp-block-legacy-widget img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 12px;
+}
+
+.news-details-content p {
+	line-height: 1.7;
+	margin-bottom: 1rem;
+}
+
+.news-wrapper-in .news-content .news-items .news-content {
+	margin-top: 0;
+}
+
+.news-wrapper-in .news-content .news-items .news-thumb {
+	margin-bottom: 30px;
+}
 
 .next-prev-blog .item .content {
 	-ms-word-wrap: break-word;
