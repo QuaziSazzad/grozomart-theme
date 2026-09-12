@@ -193,28 +193,120 @@ class Grozomart_Post_Helper
 
 	/**
 	 * Social share links for the current post.
+	 *
+	 * The network list comes from the Grozomart Toolkit option panel
+	 * (Blog > Social Share Links). With the plugin inactive there is no
+	 * option to read, so nothing is rendered at all.
 	 */
 	public static function post_share_links()
 	{
+		$items = self::enabled_share_networks();
+
+		if (empty($items)) {
+			return;
+		}
+
 		$url   = rawurlencode(get_permalink());
 		$title = rawurlencode(wp_strip_all_tags(get_the_title()));
+		$image = rawurlencode((string) get_the_post_thumbnail_url(get_the_ID(), 'full'));
 
-		$networks = [
-			'facebook'   => 'https://www.facebook.com/sharer/sharer.php?u=' . $url,
-			'twitter'    => 'https://twitter.com/intent/tweet?url=' . $url . '&text=' . $title,
-			'linkedin-in' => 'https://www.linkedin.com/sharing/share-offsite/?url=' . $url,
-			'youtube'    => '#',
-		];
+		$templates = self::share_network_templates();
 	?>
 		<div class="social-share">
 			<span class="me-3"><?php esc_html_e('Share:', 'grozomart'); ?></span>
-			<?php foreach ($networks as $icon => $link) : ?>
-				<a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer">
-					<i class="fab fa-<?php echo esc_attr($icon); ?>"></i>
+			<?php foreach ($items as $network) :
+				if (! isset($templates[$network])) {
+					continue;
+				}
+
+				$link = strtr($templates[$network]['url'], [
+					'{url}'   => $url,
+					'{title}' => $title,
+					'{image}' => $image,
+				]);
+			?>
+				<a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer"
+					aria-label="<?php echo esc_attr($templates[$network]['label']); ?>">
+					<i class="fab fa-<?php echo esc_attr($templates[$network]['icon']); ?>"></i>
 				</a>
 			<?php endforeach; ?>
 		</div>
 	<?php
+	}
+
+	/**
+	 * Networks enabled in the toolkit's share sorter, in the saved order.
+	 *
+	 * Returns an empty array when Grozomart Toolkit is inactive — the option
+	 * panel ships with the plugin, so without it there is nothing to share by.
+	 */
+	public static function enabled_share_networks()
+	{
+		if (! self::toolkit_active()) {
+			return [];
+		}
+
+		$items = Grozomart_Helper::get_option('social_share_item', []);
+
+		if (empty($items['enabled']) || ! is_array($items['enabled'])) {
+			return [];
+		}
+
+		return array_keys($items['enabled']);
+	}
+
+	/**
+	 * Share URL patterns and icons, keyed by the sorter's network keys.
+	 */
+	protected static function share_network_templates()
+	{
+		return [
+			'facebook'  => [
+				'url'   => 'https://www.facebook.com/sharer/sharer.php?u={url}',
+				'icon'  => 'facebook-f',
+				'label' => esc_attr__('Share on Facebook', 'grozomart'),
+			],
+			'twitter'   => [
+				'url'   => 'https://twitter.com/intent/tweet?url={url}&text={title}',
+				'icon'  => 'twitter',
+				'label' => esc_attr__('Share on Twitter', 'grozomart'),
+			],
+			'pinterest' => [
+				'url'   => 'https://pinterest.com/pin/create/button/?url={url}&description={title}&media={image}',
+				'icon'  => 'pinterest-p',
+				'label' => esc_attr__('Share on Pinterest', 'grozomart'),
+			],
+			'linkedin'  => [
+				'url'   => 'https://www.linkedin.com/sharing/share-offsite/?url={url}',
+				'icon'  => 'linkedin-in',
+				'label' => esc_attr__('Share on LinkedIn', 'grozomart'),
+			],
+			'reddit'    => [
+				'url'   => 'https://www.reddit.com/submit?url={url}&title={title}',
+				'icon'  => 'reddit-alien',
+				'label' => esc_attr__('Share on Reddit', 'grozomart'),
+			],
+			'whatsapp'  => [
+				'url'   => 'https://api.whatsapp.com/send?text={title}%20{url}',
+				'icon'  => 'whatsapp',
+				'label' => esc_attr__('Share on WhatsApp', 'grozomart'),
+			],
+			'telegram'  => [
+				'url'   => 'https://t.me/share/url?url={url}&text={title}',
+				'icon'  => 'telegram-plane',
+				'label' => esc_attr__('Share on Telegram', 'grozomart'),
+			],
+		];
+	}
+
+	/**
+	 * Whether Grozomart Toolkit is available.
+	 */
+	public static function toolkit_active()
+	{
+		// The plugin defines this on load, so it is a reliable presence check
+		// even before the options class is autoloaded.
+		return defined('GROZOMART_TOOLKIT_VERSION');
 	}
 
 	/**
