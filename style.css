@@ -1474,6 +1474,7 @@ p.logged-in-as {
 }
 
 /* end unit test */
+.offcanvas__logo img,
 .middle-wrap-items .logo img {
 	max-width: 202px;
 }
@@ -1501,6 +1502,7 @@ p.logged-in-as {
 	margin-top: 0;
 }
 
+.client-img img,
 .rounded-circle img {
 	border-radius: 50%;
 }
