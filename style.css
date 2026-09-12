@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.1.9
+Version: 1.2.0
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -1457,8 +1457,9 @@ html {
 	margin-bottom: 30px;
 }
 
+
 p.logged-in-as {
-	margin-top: -15px;
+	margin-top: 0;
 	margin-bottom: 22px;
 }
 
@@ -1466,7 +1467,17 @@ p.logged-in-as {
 	margin-top: 0;
 }
 
+.news-details-top-area .title,
+.news-items .news-content .title-2 a {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
 /* end unit test */
+.middle-wrap-items .logo img {
+	max-width: 202px;
+}
+
 .main-sideber img,
 .entry-content .wp-block-legacy-widget img {
 	max-width: 100%;
