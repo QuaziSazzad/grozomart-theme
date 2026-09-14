@@ -13,8 +13,9 @@ if (defined('ELEMENTOR_VERSION') && \Elementor\Plugin::$instance->preview->is_pr
     echo '';
 } else {
 ?>
+    <!-- Preloader Start -->
     <div class="preloader">
-        <div class="custom-loader"></div>
+        <div class="loader"></div>
     </div>
 <?php
 }

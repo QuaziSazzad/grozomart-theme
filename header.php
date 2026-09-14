@@ -45,5 +45,8 @@ use GrozomartTheme\Classes\Grozomart_Woocommerce as Grozomart_Woocommerce;
 			Grozomart_Woocommerce::mini_cart_sidebar();
 		}
 		?>
+		<!-- GT MouseCursor Start -->
+		<div class="mouseCursor cursor-outer"></div>
+		<div class="mouseCursor cursor-inner"></div>
 		<main id="grozomart-content" class="grozomart-content-area">
 			<?php get_template_part('template-parts/page-title'); ?>
