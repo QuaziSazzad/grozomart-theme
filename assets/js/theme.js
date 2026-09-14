@@ -418,15 +418,11 @@
         Back To Top Button Js Start
     ================================ */
     $windowOn.on('scroll', function() {
-        var windowScrollTop = $(this).scrollTop();
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
+        // Reveal once the visitor has scrolled a screen's worth, rather than
+        // only at the very bottom of the document.
+        var showAfter = Math.max(300, $(window).height() * 0.5);
 
-        if (windowScrollTop + windowHeight >= documentHeight - 10) {
-            $("#back-top").addClass("show");
-        } else {
-            $("#back-top").removeClass("show");
-        }
+        $("#back-top").toggleClass("show", $(this).scrollTop() > showAfter);
     });
 
     $documentOn.on('click', '#back-top', function() {

@@ -215,6 +215,36 @@ class Grozomart_Helper
 	/**
 	 * Check Default Footer
 	 */
+	/**
+	 * Whether the Back to Top button should render on the current view.
+	 *
+	 * The global switch lives in the theme options; each page, post or
+	 * portfolio item can override it with its own metabox, where "default"
+	 * means "follow the global setting".
+	 */
+	public static function show_back_to_top()
+	{
+		$enabled = self::get_option('back_to_top', 'enabled');
+
+		if (is_page()) {
+			$page_setting = self::get_meta('grozomart_page_meta', 'back_to_top_page', 'default');
+			$enabled      = ('default' !== $page_setting) ? $page_setting : $enabled;
+		} elseif (is_singular()) {
+			switch (get_post_type()) {
+				case 'post':
+					$post_setting = self::get_meta('grozomart_post_meta', 'back_to_top_post', 'default');
+					$enabled      = ('default' !== $post_setting) ? $post_setting : $enabled;
+					break;
+				case 'grozomart_portfolio':
+					$portfolio_setting = self::get_meta('grozomart_portfolio_meta', 'back_to_top_portfolio', 'default');
+					$enabled           = ('default' !== $portfolio_setting) ? $portfolio_setting : $enabled;
+					break;
+			}
+		}
+
+		return 'enabled' === $enabled;
+	}
+
 	public static function check_default_footer()
 	{
 		$default_footer = self::get_option('default_footer', 'enabled');

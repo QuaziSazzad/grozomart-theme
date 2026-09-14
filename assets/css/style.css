@@ -403,6 +403,14 @@ span {
   transform: translate(0);
 }
 
+/* The button only appears on small screens when the theme option adds
+   .show-on-mobile, so hide it there by default. */
+@media (max-width: 767px) {
+  .back-to-top:not(.show-on-mobile) {
+    display: none;
+  }
+}
+
 .cursor-outer {
   margin-inline-start: -12px;
   margin-top: -12px;
