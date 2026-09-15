@@ -16,7 +16,15 @@ class Grozomart_Post_Helper
 	 */
 	public static function render_news_meta($list_class = '')
 	{
-		$categories = get_the_category();
+		/**
+		 * Categories can be hidden separately for the archive listing and the
+		 * single post view, via the toolkit's Blog options.
+		 */
+		$show_category = is_single()
+			? Grozomart_Helper::get_option('blog_details_category', 'yes')
+			: Grozomart_Helper::get_option('archive_post_category', 'yes');
+
+		$categories = ('yes' === $show_category) ? get_the_category() : [];
 ?>
 		<ul<?php if ($list_class) : ?> class="<?php echo esc_attr($list_class); ?>" <?php endif; ?>>
 			<?php if (! empty($categories)) : ?>
@@ -76,62 +84,6 @@ class Grozomart_Post_Helper
 			}
 
 			the_post_thumbnail($size, ['alt' => wp_kses_post(get_the_title())]);
-		}
-
-		/**
-		 * Get Meta Markup
-		 */
-		public static function meta_item_markup($meta)
-		{
-			$author_id = get_post_field('post_author', get_the_ID());
-
-			if ('author' === $meta) : ?>
-				<li><i class="far fa-user"></i>
-					<a href="<?php echo esc_url(get_author_posts_url($author_id)) ?>">
-						<?php echo esc_html(get_the_author_meta('display_name', $author_id)) ?>
-					</a>
-				</li>
-			<?php elseif ('date' === $meta) : ?>
-				<li><i class="far fa-calendar-alt"></i>
-					<a href="<?php echo esc_url(get_the_permalink(get_the_ID())) ?>">
-						<?php echo esc_html(get_the_date()) ?>
-					</a>
-				</li>
-			<?php elseif ('comments' === $meta && ! post_password_required() && comments_open()) : ?>
-				<li><i class="far fa-comments"></i>
-					<a href="<?php echo esc_url(esc_url(get_comments_link())) ?>" class="comments">
-						<span class="comment-text"><?php echo esc_html__('Comments ', 'grozomart') ?></span>
-						<?php echo '(' . esc_html(get_comments_number()) . ')' ?>
-					</a>
-				</li>
-			<?php endif;
-		}
-
-		/**
-		 * Get Post Meta
-		 */
-		public static function render_post_meta()
-		{
-			$default_item = [
-				'enabled' => [
-					'author'   => esc_html__('Author', 'grozomart'),
-					'date'     => esc_html__('Date', 'grozomart'),
-					'comments' => esc_html__('Date', 'grozomart'),
-				]
-			];
-			if (is_single()) {
-				$meta_items = Grozomart_Helper::get_option('single_meta_items', $default_item);
-			} else {
-				$meta_items = Grozomart_Helper::get_option('archive_meta_items', $default_item);
-			}
-			$enable_meta = $meta_items['enabled'] ? $meta_items['enabled'] : [];
-			?>
-			<ul class="blog-meta-two">
-				<?php foreach ($enable_meta as $key => $item) {
-					self::meta_item_markup($key);
-				} ?>
-			</ul>
-		<?php
 		}
 
 		/**
