@@ -275,68 +275,89 @@ class Grozomart_Helper
 	}
 
 	/**
+	 * The theme palette, as declared in assets/css/style.css :root.
+	 *
+	 * Each entry maps an option/meta id to the CSS custom property the
+	 * stylesheet actually consumes, so changing a colour in the panel
+	 * overrides the stylesheet value rather than writing an unused variable.
+	 */
+	public static function palette_schema()
+	{
+		return [
+			'theme_color'   => [
+				'slug'    => 'theme',
+				'title'   => esc_html__('Theme', 'grozomart'),
+				'default' => '#064C50',
+			],
+			'theme2_color'  => [
+				'slug'    => 'theme2',
+				'title'   => esc_html__('Theme 2', 'grozomart'),
+				'default' => '#BDEB69',
+			],
+			'header_color'  => [
+				'slug'    => 'header',
+				'title'   => esc_html__('Heading', 'grozomart'),
+				'default' => '#212529',
+			],
+			'text_color'    => [
+				'slug'    => 'text',
+				'title'   => esc_html__('Text', 'grozomart'),
+				'default' => '#6B7280',
+			],
+			'body_bg_color' => [
+				'slug'    => 'body',
+				'title'   => esc_html__('Body Background', 'grozomart'),
+				'default' => '#FFFFFF',
+			],
+			'bg_color'      => [
+				'slug'    => 'bg',
+				'title'   => esc_html__('Section Background', 'grozomart'),
+				'default' => '#F5F2EC',
+			],
+			'border_color'  => [
+				'slug'    => 'border',
+				'title'   => esc_html__('Border', 'grozomart'),
+				'default' => '#FFFFFF33',
+			],
+			'white_color'   => [
+				'slug'    => 'white',
+				'title'   => esc_html__('White', 'grozomart'),
+				'default' => '#FFFFFF',
+			],
+			'black_color'   => [
+				'slug'    => 'black',
+				'title'   => esc_html__('Black', 'grozomart'),
+				'default' => '#000000',
+			],
+		];
+	}
+
+	/**
 	 * Theme Global Colors
 	 */
 	public static function get_global_colors()
 	{
 		$colors = [];
 
-		// Light
-		$primary_color   = self::get_option('primary_color', '');
-		$secondary_color = self::get_option('secondary_color', '');
-		$blue_color = self::get_option('blue_color', '');
-		$body_color      = self::get_option('body_color', '');
-		$heading_color   = self::get_option('heading_color', '');
-		$gray_color      = self::get_option('gray_color', '');
-		$light_neutral   = self::get_option('light_neutral', '');
+		foreach (self::palette_schema() as $option_id => $item) {
+			$value = self::get_option($option_id, '');
 
-		$colors['_primary'] = [
-			'slug'  => 'grozomart-primary-color',
-			'title' => esc_html__('Primary', 'grozomart'),
-			'value' => ! empty($primary_color) ? $primary_color : '#FC5546',
-		];
-
-		$colors['_secondary'] = [
-			'slug'  => 'grozomart-secondary-color',
-			'title' => esc_html__('Secondary', 'grozomart'),
-			'value' => ! empty($secondary_color) ? $secondary_color : '#021433',
-		];
-
-		$colors['_blue'] = [
-			'slug'  => 'grozomart-blue-color',
-			'title' => esc_html__('Blue', 'grozomart'),
-			'value' => ! empty($blue_color) ? $secondary_color : '#021433',
-		];
-
-		$colors['_body'] = [
-			'slug'  => 'grozomart-body-color',
-			'title' => esc_html__('Body', 'grozomart'),
-			'value' => ! empty($body_color) ? $body_color : '#5B5B5B',
-		];
-
-		$colors['_heading'] = [
-			'slug'  => 'grozomart-heading-color',
-			'title' => esc_html__('Headline', 'grozomart'),
-			'value' => ! empty($heading_color) ? $heading_color : '#0B0C0C',
-		];
-
-		$colors['_gray'] = [
-			'slug'  => 'grozomart-gray-color',
-			'title' => esc_html__('Gray', 'grozomart'),
-			'value' => ! empty($gray_color) ? $gray_color : '#F3F6F9',
-		];
-
-		$colors['_light'] = [
-			'slug'  => 'grozomart-light-neutral',
-			'title' => esc_html__('Light', 'grozomart'),
-			'value' => ! empty($light_neutral) ? $light_neutral : '#F3F6F9',
-		];
+			$colors['_' . $item['slug']] = [
+				'slug'  => $item['slug'],
+				'title' => $item['title'],
+				'value' => ! empty($value) ? $value : $item['default'],
+			];
+		}
 
 		return $colors;
 	}
 
 	/**
 	 * Theme Page Colors
+	 *
+	 * Only the colours actually set on the page are returned, so an enabled
+	 * page scheme that leaves a field empty keeps the global value instead of
+	 * falling back to the hard-coded default.
 	 */
 	public static function get_page_colors()
 	{
@@ -348,55 +369,19 @@ class Grozomart_Helper
 			return $colors;
 		}
 
-		$primary_color   = self::get_meta('grozomart_page_meta', 'primary_color', '');
-		$secondary_color = self::get_meta('grozomart_page_meta', 'secondary_color', '');
-		$blue_color = self::get_meta('grozomart_page_meta', 'blue_color', '');
-		$body_color      = self::get_meta('grozomart_page_meta', 'body_color', '');
-		$heading_color   = self::get_meta('grozomart_page_meta', 'heading_color', '');
-		$gray_color      = self::get_meta('grozomart_page_meta', 'gray_color', '');
-		$light_neutral   = self::get_meta('grozomart_page_meta', 'light_neutral', '');
+		foreach (self::palette_schema() as $option_id => $item) {
+			$value = self::get_meta('grozomart_page_meta', $option_id, '');
 
-		$colors['_primary'] = [
-			'slug'  => 'grozomart-primary-color',
-			'title' => esc_html__('Primary', 'grozomart'),
-			'value' => ! empty($primary_color) ? $primary_color : '#FC5546',
-		];
+			if (empty($value)) {
+				continue;
+			}
 
-		$colors['_secondary'] = [
-			'slug'  => 'grozomart-secondary-color',
-			'title' => esc_html__('Secondary', 'grozomart'),
-			'value' => ! empty($secondary_color) ? $secondary_color : '#021433',
-		];
-
-		$colors['_blue'] = [
-			'slug'  => 'grozomart-blue-color',
-			'title' => esc_html__('blue', 'grozomart'),
-			'value' => ! empty($blue_color) ? $blue_color : '#021433',
-		];
-
-		$colors['_body'] = [
-			'slug'  => 'grozomart-body-color',
-			'title' => esc_html__('Body', 'grozomart'),
-			'value' => ! empty($body_color) ? $body_color : '#5B5B5B',
-		];
-
-		$colors['_heading'] = [
-			'slug'  => 'grozomart-heading-color',
-			'title' => esc_html__('Headline', 'grozomart'),
-			'value' => ! empty($heading_color) ? $heading_color : '#0B0C0C',
-		];
-
-		$colors['_gray'] = [
-			'slug'  => 'grozomart-gray-color',
-			'title' => esc_html__('Gray', 'grozomart'),
-			'value' => ! empty($gray_color) ? $gray_color : '#F3F6F9',
-		];
-
-		$colors['_light'] = [
-			'slug'  => 'grozomart-light-neutral',
-			'title' => esc_html__('Light', 'grozomart'),
-			'value' => ! empty($light_neutral) ? $light_neutral : '#F3F6F9',
-		];
+			$colors['_' . $item['slug']] = [
+				'slug'  => $item['slug'],
+				'title' => $item['title'],
+				'value' => $value,
+			];
+		}
 
 		return $colors;
 	}
