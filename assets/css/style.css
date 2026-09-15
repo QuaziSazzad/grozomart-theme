@@ -522,6 +522,24 @@ span {
   content: "GrozoMart ";
 }
 
+/* WooCommerce ships `.woocommerce .loader::before` (a spinner image with an
+   empty content string) which outranks the rule above on shop pages. Without
+   the text there is nothing for `background-clip: text` to clip, so the
+   gradient paints as a solid circle. Restore the theme's own preloader. */
+.woocommerce .preloader .loader::before {
+  content: "GrozoMart ";
+  position: static;
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: none;
+  animation: none;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
 @keyframes l9 {
   to {
     background-position: calc(50% + 1.6em) 0, calc(50% + 3.2em) 0.8em;
