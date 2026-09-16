@@ -5180,3 +5180,8 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 .wp-block-woocommerce-empty-cart-block .wp-block-heading+.wc-block-grid {
 	margin-top: 30px;
 } */
+
+
+.shoping-feature-box-2 .icon img {
+	max-width: 33px;
+}
