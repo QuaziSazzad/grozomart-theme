@@ -33,11 +33,6 @@ function grozomart_register_required_plugins()
 			'required' => false,
 		],
 		[
-			'name'     => esc_html__('Breadcrumb NavXT', 'grozomart'),
-			'slug'     => 'breadcrumb-navxt',
-			'required' => false,
-		],
-		[
 			'name'     => esc_html__('WooCommerce', 'grozomart'),
 			'slug'     => 'woocommerce',
 			'required' => false,

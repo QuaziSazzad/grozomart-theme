@@ -52,6 +52,17 @@ $author_info     = Helper::get_option('blog_author_info', 'yes');
 		// Side by side when both are present; otherwise the one that renders
 		// takes the full row instead of leaving half of it empty.
 		$grozomart_col = ($has_tags && $has_share) ? 'col-lg-6' : 'col-lg-12';
+
+		// Built as a class list so the whole attribute goes through esc_attr().
+		$grozomart_share_classes = [$grozomart_col, 'col-12', 'mt-3', 'mt-lg-0'];
+
+		if ($has_tags) {
+			// Only push the share column right when tags sit beside it.
+			$grozomart_share_classes[] = 'text-lg-end';
+		}
+
+		$grozomart_share_classes[] = 'wow';
+		$grozomart_share_classes[] = 'fadeInUp';
 		?>
 		<div class="row tag-share-wrap mt-5 mb-5">
 			<?php if ($has_tags) : ?>
@@ -63,7 +74,7 @@ $author_info     = Helper::get_option('blog_author_info', 'yes');
 				</div>
 			<?php endif; ?>
 			<?php if ($has_share) : ?>
-				<div class="<?php echo esc_attr($grozomart_col); ?> col-12 mt-3 mt-lg-0 <?php echo $has_tags ? 'text-lg-end' : ''; ?> wow fadeInUp" data-wow-delay=".4s">
+				<div class="<?php echo esc_attr(implode(' ', $grozomart_share_classes)); ?>" data-wow-delay=".4s">
 					<?php Grozomart_Post_Helper::post_share_links(); ?>
 				</div>
 			<?php endif; ?>

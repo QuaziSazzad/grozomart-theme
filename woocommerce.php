@@ -19,8 +19,20 @@ defined('ABSPATH') || exit;
 
 get_header();
 
-$grozomart_is_product_search = is_search() && 'product' === get_query_var('post_type');
-$grozomart_can_use_layout    = $grozomart_is_product_search
+/**
+ * Views this template renders with the shop's own layout: product search,
+ * the main shop page, and product category / tag archives. Everything else
+ * (single products included) falls through to woocommerce_content().
+ */
+$grozomart_is_product_search  = is_search() && 'product' === get_query_var('post_type');
+$grozomart_is_product_archive = ! is_search()
+    && (
+        (function_exists('is_shop') && is_shop())
+        || is_tax('product_cat')
+        || is_tax('product_tag')
+    );
+
+$grozomart_can_use_layout = ($grozomart_is_product_search || $grozomart_is_product_archive)
     && class_exists('\GrozomartToolkit\Helper\Grozomart_Shop_Filter')
     && function_exists('grozomart_get_elementor_template');
 
@@ -31,7 +43,7 @@ if (! $grozomart_can_use_layout) :
      * works with the plugin disabled.
      */
 ?>
-    <div class="py-120">
+    <div class="pb-120">
         <div class="container">
             <?php woocommerce_content(); ?>
         </div>
@@ -40,6 +52,14 @@ if (! $grozomart_can_use_layout) :
 else :
 
     $filter = '\GrozomartToolkit\Helper\Grozomart_Shop_Filter';
+
+    /**
+     * The toolkit registers this handle on wp_enqueue_scripts, but only the
+     * Shop widget enqueues it (via Elementor's get_script_depends()). This
+     * template renders the same markup outside Elementor, so without this the
+     * sidebar filters submit as a normal form instead of filtering by AJAX.
+     */
+    wp_enqueue_script('grozomart-shop-filter');
 
     $shop_two_search = get_search_query();
 
@@ -66,6 +86,14 @@ else :
         $shop_two_categories = [];
     }
 
+    $shop_two_tags = get_terms([
+        'taxonomy'   => 'product_tag',
+        'hide_empty' => true,
+    ]);
+    if (is_wp_error($shop_two_tags)) {
+        $shop_two_tags = [];
+    }
+
     $shop_two_bounds      = $filter::price_bounds();
     $shop_two_price_floor = $shop_two_bounds['floor'];
     $shop_two_price_ceil  = $shop_two_bounds['ceil'];
@@ -77,6 +105,25 @@ else :
     $shop_two_selected_cats = [];
     if (isset($_GET['product_cat'])) {
         $shop_two_selected_cats = array_filter(array_map('sanitize_title', (array) wp_unslash($_GET['product_cat'])));
+    }
+
+    $shop_two_selected_tags = isset($_GET['product_tag']) ? array_filter(array_map('sanitize_title', (array) wp_unslash($_GET['product_tag']))) : [];
+
+    /**
+     * On a category or tag archive the term itself is the filter. Seed it into
+     * the selection so the query is scoped to it and the sidebar shows that
+     * box ticked; the shopper can still tick more boxes from there.
+     */
+    if ($grozomart_is_product_archive) {
+        $grozomart_queried_term = get_queried_object();
+
+        if ($grozomart_queried_term instanceof WP_Term) {
+            if ('product_cat' === $grozomart_queried_term->taxonomy && empty($shop_two_selected_cats)) {
+                $shop_two_selected_cats = [$grozomart_queried_term->slug];
+            } elseif ('product_tag' === $grozomart_queried_term->taxonomy && empty($shop_two_selected_tags)) {
+                $shop_two_selected_tags = [$grozomart_queried_term->slug];
+            }
+        }
     }
 
     $shop_two_selected_stock = isset($_GET['stock_status']) ? array_filter(array_map('sanitize_key', (array) wp_unslash($_GET['stock_status']))) : [];
@@ -100,6 +147,7 @@ else :
         'orderby_choice'    => $shop_two_orderby_choice,
         'search'            => $shop_two_search,
         'selected_cats'     => $shop_two_selected_cats,
+        'selected_tags'     => $shop_two_selected_tags,
         'widget_categories' => [],
         'selected_stock'    => $shop_two_selected_stock,
         'on_sale_only'      => $shop_two_on_sale_only,
@@ -155,13 +203,20 @@ else :
                         <form method="get" class="shop-filter-form" id="shop-filter-form-<?php echo esc_attr($shop_two_uid); ?>">
                             <?php
                             /**
-                             * Carry the keyword through every sidebar filter
-                             * submit, otherwise filtering would silently turn
-                             * the search into a full catalogue listing.
+                             * On a search, carry the keyword through every
+                             * sidebar submit, otherwise filtering would
+                             * silently turn it into a full catalogue listing.
+                             *
+                             * On a category or tag archive there is no keyword
+                             * and the form posts back to the archive URL, so
+                             * these fields are deliberately omitted - adding
+                             * them would convert the archive into a search.
                              */
                             ?>
-                            <input type="hidden" name="s" value="<?php echo esc_attr($shop_two_search); ?>">
-                            <input type="hidden" name="post_type" value="product">
+                            <?php if ($grozomart_is_product_search) : ?>
+                                <input type="hidden" name="s" value="<?php echo esc_attr($shop_two_search); ?>">
+                                <input type="hidden" name="post_type" value="product">
+                            <?php endif; ?>
 
                             <div class="shop-sidebar-item active">
                                 <div class="sidebar-header">
@@ -231,6 +286,28 @@ else :
                                     </div>
                                 </div>
                             </div>
+
+                            <?php if (! empty($shop_two_tags)) : ?>
+                                <div class="shop-sidebar-item active">
+                                    <div class="sidebar-header">
+                                        <div class="head-title"><?php esc_html_e('Product Tags', 'grozomart'); ?></div>
+                                        <i class="fas fa-chevron-down toggle-icon"></i>
+                                    </div>
+                                    <div class="sidebar-content">
+                                        <div class="sidebar-inner">
+                                            <div class="checkbox-group">
+                                                <?php foreach ($shop_two_tags as $shop_two_tag) : ?>
+                                                    <label class="custom-checkbox">
+                                                        <input type="checkbox" name="product_tag[]" value="<?php echo esc_attr($shop_two_tag->slug); ?>" <?php checked(in_array($shop_two_tag->slug, $shop_two_selected_tags, true)); ?>>
+                                                        <span class="checkmark"></span>
+                                                        <?php echo esc_html($shop_two_tag->name); ?>
+                                                    </label>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </form>
                     </div>
                 </div>

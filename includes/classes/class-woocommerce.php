@@ -198,7 +198,7 @@ class Grozomart_Woocommerce
 	// Add container and row wrappers for shop and single product pages
 	public function open_container_row()
 	{
-		echo '<div class="py-120"><div class="container"><div class="row">';
+		echo '<div class="pb-120"><div class="container"><div class="row">';
 	}
 
 	public function close_container_row()

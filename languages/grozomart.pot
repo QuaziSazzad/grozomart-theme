@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Grozomart\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-03 09:22+0000\n"
+"POT-Creation-Date: 2026-09-24 05:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,43 +13,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.23\n"
+"X-Loco-Version: 2.8.8; wp-7.1.2; php-8.2.23\n"
 "X-Domain: grozomart"
 
-#: includes/admin/templates/server-status.php:114
+#: includes/admin/templates/server-status.php:116
 msgid " - We recommend a minimum PHP version of "
 msgstr ""
 
-#: includes/admin/templates/server-status.php:213
+#: includes/admin/templates/server-status.php:215
 msgid " - We recommend minimum value: 128 MB."
 msgstr ""
 
-#: includes/admin/templates/server-status.php:143
-#: includes/admin/templates/server-status.php:165
-#: includes/admin/templates/server-status.php:187
+#: includes/admin/templates/server-status.php:145
+#: includes/admin/templates/server-status.php:167
+#: includes/admin/templates/server-status.php:189
 msgid " - We recommend setting max execution time to at least "
 msgstr ""
 
-#: includes/admin/templates/server-status.php:48
+#: includes/admin/templates/server-status.php:50
 msgid " - We recommend setting memory to be at least 128MB"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:68
+#: includes/admin/templates/server-status.php:70
 msgid " How to disable WP_DEBUG mode."
 msgstr ""
 
-#: comments.php:66
-msgid " Submit Comment"
+#: comments.php:28
+msgid "% Customer Comments"
 msgstr ""
 
-#: 404.php:15
-msgid "\"Oops! It looks like something went wrong.\""
-msgstr ""
+#: includes/classes/class-woocommerce.php:258
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: includes/admin/templates/welcome.php:45
 #, php-format
 msgid ""
 "%s is already installed and ready to use! Let's build something impressive."
+msgstr ""
+
+#. %s: the lighter-weight opening line of the 404 heading.
+#: 404.php:24
+#, php-format
+msgid "%s looking <br> for isn't here."
 msgstr ""
 
 #: includes/classes/class-breadcrumb.php:65
@@ -59,12 +67,16 @@ msgstr ""
 msgid "&#39;"
 msgstr ""
 
-#: template-parts/page-title.php:117
-msgid "404"
+#: comments.php:26
+msgid "0 Customer Comments"
 msgstr ""
 
-#: 404.php:28
-msgid "404 Error"
+#: comments.php:27
+msgid "1 Customer Comment"
+msgstr ""
+
+#: template-parts/page-title.php:115
+msgid "404"
 msgstr ""
 
 #: includes/admin/templates/theme-activation.php:63
@@ -91,6 +103,10 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
+#: template-parts/header/header-search-form.php:33
+msgid "All type"
+msgstr ""
+
 #: includes/classes/class-breadcrumb.php:71
 msgid "Archive by &#39;"
 msgstr ""
@@ -103,38 +119,49 @@ msgstr ""
 msgid "Articles by "
 msgstr ""
 
-#: includes/classes/class-post-helper.php:67
-#: includes/admin/templates/server-status.php:94
+#: includes/admin/templates/server-status.php:96
 msgid "Author"
 msgstr ""
 
-#: functions.php:60
+#: 404.php:34
+msgid "Back to Home"
+msgstr ""
+
+#: footer.php:41
+msgid "Back to top"
+msgstr ""
+
+#: includes/classes/class-helper.php:329
+msgid "Black"
+msgstr ""
+
+#: functions.php:62
 msgid "Block Pattern"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:63
 msgctxt "Block pattern description"
 msgid "This is my first block pattern"
 msgstr ""
 
-#: includes/classes/class-helper.php:268
-msgid "Blue"
-msgstr ""
-
-#: includes/classes/class-helper.php:334
-msgid "blue"
-msgstr ""
-
-#: functions.php:48
+#: functions.php:50
 msgid "Blue Quote"
 msgstr ""
 
-#: includes/classes/class-helper.php:274 includes/classes/class-helper.php:340
-msgid "Body"
+#: includes/classes/class-helper.php:309
+msgid "Body Background"
+msgstr ""
+
+#: includes/classes/class-helper.php:319
+msgid "Border"
 msgstr ""
 
 #: includes/library/required-plugin.php:36
 msgid "Breadcrumb NavXT"
+msgstr ""
+
+#: includes/classes/class-woocommerce.php:303
+msgid "Browse Shop"
 msgstr ""
 
 #: includes/admin/templates/welcome.php:55
@@ -143,25 +170,13 @@ msgid ""
 "Check <a href=\"%s\">Server status</a> to avoid errors with your WordPress."
 msgstr ""
 
+#: includes/classes/class-woocommerce.php:316
+msgid "Checkout"
+msgstr ""
+
 #: includes/admin/templates/theme-activation.php:77
 #, php-format
 msgid "Click the Download button in \"%s\" row."
-msgstr ""
-
-#: includes/classes/class-post-helper.php:53
-msgid "Comments "
-msgstr ""
-
-#: comments.php:28
-msgid "Comments (%)"
-msgstr ""
-
-#: comments.php:26
-msgid "Comments (0)"
-msgstr ""
-
-#: comments.php:27
-msgid "Comments (1)"
 msgstr ""
 
 #: comments.php:47
@@ -177,16 +192,11 @@ msgstr ""
 msgid "Copyright © %s. All rights reserved."
 msgstr ""
 
-#: includes/classes/class-post-helper.php:68
-#: includes/classes/class-post-helper.php:69
-msgid "Date"
-msgstr ""
-
 #: includes/admin/templates/theme-activation.php:55
 msgid "Deactivate Theme"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:72
+#: includes/admin/templates/server-status.php:74
 msgid "Disabled."
 msgstr ""
 
@@ -196,15 +206,25 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
+#: 404.php:31
+msgid ""
+"Don't worry—use the navigation menu or return to the homepage to continue "
+"exploring. We're here to help you get back on track quickly and easily."
+msgstr ""
+
 #: includes/library/required-plugin.php:18
 msgid "Elementor Website Builder"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:234
+#: comments.php:60
+msgid "Email Address*"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:236
 msgid "Enabled"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:65
+#: includes/admin/templates/server-status.php:67
 msgid "Enabled."
 msgstr ""
 
@@ -214,6 +234,14 @@ msgstr ""
 
 #: includes/classes/class-breadcrumb.php:149
 msgid "Error 404"
+msgstr ""
+
+#: woocommerce.php:203
+msgid "Filter"
+msgstr ""
+
+#: comments.php:56
+msgid "Full name*"
 msgstr ""
 
 #: template-parts/header/header-button.php:14
@@ -228,21 +256,21 @@ msgstr ""
 msgid "Get Support"
 msgstr ""
 
-#: 404.php:17
-msgid "Go to Home"
+#. Name of the theme
+msgid "Grozomart"
 msgstr ""
 
-#: includes/classes/class-helper.php:286 includes/classes/class-helper.php:352
-msgid "Gray"
+#: includes/library/required-plugin.php:24
+msgid "Grozomart Toolkit"
 msgstr ""
 
-#: includes/classes/class-assets.php:52
+#: includes/classes/class-assets.php:55
 msgctxt "Hanken Grotesk"
 msgid "on"
 msgstr ""
 
-#: includes/classes/class-helper.php:280 includes/classes/class-helper.php:346
-msgid "Headline"
+#: includes/classes/class-helper.php:299
+msgid "Heading"
 msgstr ""
 
 #: includes/admin/class-admin-panel.php:61
@@ -250,15 +278,16 @@ msgstr ""
 msgid "Help Center"
 msgstr ""
 
-#: includes/classes/class-breadcrumb.php:32
+#: template-parts/page-title.php:140 includes/classes/class-breadcrumb.php:32
+#: template-parts/contents/post-header.php:24
 msgid "Home"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:25
+#: includes/admin/templates/server-status.php:27
 msgid "Home URL"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:53
+#: includes/admin/templates/server-status.php:55
 msgid "How to change memory settings."
 msgstr ""
 
@@ -270,7 +299,7 @@ msgstr ""
 msgid "https://wp.webtend.net/grozomart"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:130
+#: includes/admin/templates/server-status.php:132
 msgid "If you want to change this setting please read this guide"
 msgstr ""
 
@@ -278,11 +307,19 @@ msgstr ""
 msgid "Import demo content"
 msgstr ""
 
+#: includes/classes/class-woocommerce.php:166
+msgid "In "
+msgstr ""
+
+#: woocommerce.php:88
+msgid "In Stock"
+msgstr ""
+
 #: includes/admin/templates/welcome.php:63
 msgid "Install Required and recommended plugins."
 msgstr ""
 
-#: includes/classes/class-assets.php:46 includes/classes/class-assets.php:76
+#: includes/classes/class-assets.php:49 includes/classes/class-assets.php:79
 msgctxt "Inter"
 msgid "on"
 msgstr ""
@@ -302,43 +339,45 @@ msgctxt "label"
 msgid "Enter your keyword"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:37
+#: includes/admin/templates/server-status.php:39
 msgid "Language"
 msgstr ""
 
-#: template-parts/page-title.php:94
+#: template-parts/page-title.php:92
 msgid "Latest News"
 msgstr ""
 
-#: comments.php:61
+#: comments.php:71
 msgid "Leave a Comment"
 msgstr ""
 
-#: includes/classes/class-helper.php:292 includes/classes/class-helper.php:358
-msgid "Light"
+#. 1: user profile URL, 2: user name, 3: logout URL.
+#: comments.php:86
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\">Log out?</a>"
 msgstr ""
 
 #: maintenance.php:22
 msgid "Maintenance Mode"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:136
+#: includes/admin/templates/server-status.php:138
 msgid "Max Execution Time"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:206
+#: includes/admin/templates/server-status.php:208
 msgid "Max upload size"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:41
+#: includes/admin/templates/server-status.php:43
 msgid "Memory Limit"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:202
+#: includes/admin/templates/server-status.php:204
 msgid "MySql Version"
 msgstr ""
 
-#: template-parts/page-title.php:43
+#: template-parts/page-title.php:41
 msgid "News Details"
 msgstr ""
 
@@ -346,24 +385,36 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: includes/library/required-plugin.php:41
+#: woocommerce.php:228
+msgid "On Sale"
+msgstr ""
+
+#: includes/library/required-plugin.php:46
 msgid "One Click Demo Import"
 msgstr ""
 
-#: template-parts/page-title.php:102
+#: template-parts/page-title.php:100
 msgid "Our Portfolio"
+msgstr ""
+
+#: woocommerce.php:89
+msgid "Out of Stock"
 msgstr ""
 
 #: includes/classes/class-breadcrumb.php:160
 msgid "Page"
 msgstr ""
 
+#: 404.php:44
+msgid "Page not found"
+msgstr ""
+
 #: template-parts/contents/content-page.php:18
-#: template-parts/contents/content-single.php:37
+#: template-parts/contents/content-single.php:31
 msgid "Pages:"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:89
+#: includes/admin/templates/server-status.php:91
 msgid "Parent Theme Version"
 msgstr ""
 
@@ -371,15 +422,15 @@ msgstr ""
 msgid "Parent Theme Version - "
 msgstr ""
 
-#: includes/admin/templates/server-status.php:158
+#: includes/admin/templates/server-status.php:160
 msgid "PHP Max Input Time"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:180
+#: includes/admin/templates/server-status.php:182
 msgid "PHP Max Input Vars"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:107
+#: includes/admin/templates/server-status.php:109
 msgid "PHP Version"
 msgstr ""
 
@@ -404,7 +455,17 @@ msgstr ""
 msgid "Please wait.."
 msgstr ""
 
-#: includes/admin/templates/server-status.php:124
+#: includes/classes/class-post-helper.php:288
+msgid "Post by"
+msgstr ""
+
+#. %s: post author name.
+#: includes/classes/class-post-helper.php:60
+#, php-format
+msgid "Post by %s"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:126
 msgid "Post Max Size"
 msgstr ""
 
@@ -412,8 +473,8 @@ msgstr ""
 msgid "Posts tagged &#39;"
 msgstr ""
 
-#: includes/classes/class-helper.php:256 includes/classes/class-helper.php:322
-msgid "Primary"
+#: woocommerce.php:201
+msgid "Price:"
 msgstr ""
 
 #: includes/classes/class-setup.php:121
@@ -424,7 +485,15 @@ msgstr ""
 msgid "Primary Sidebar"
 msgstr ""
 
-#: template-parts/page-title.php:61
+#: woocommerce.php:168
+msgid "Product Categories"
+msgstr ""
+
+#: woocommerce.php:212
+msgid "Product Status"
+msgstr ""
+
+#: template-parts/page-title.php:59
 msgid "Project Details"
 msgstr ""
 
@@ -432,7 +501,7 @@ msgstr ""
 msgid "Read How to find purchase code?"
 msgstr ""
 
-#: template-parts/contents/content.php:19
+#: template-parts/contents/content.php:18
 msgid "Read More"
 msgstr ""
 
@@ -444,12 +513,16 @@ msgstr ""
 msgid "Ready to publish your first post?."
 msgstr ""
 
-#: includes/classes/class-comment-walker.php:82
-msgid "Reply "
+#: includes/classes/class-woocommerce.php:288
+msgid "Remove this item"
 msgstr ""
 
-#: includes/library/required-plugin.php:59
-#: includes/library/required-plugin.php:60
+#: includes/classes/class-comment-walker.php:92
+msgid "Reply"
+msgstr ""
+
+#: includes/library/required-plugin.php:64
+#: includes/library/required-plugin.php:65
 msgid "Required Plugins"
 msgstr ""
 
@@ -457,16 +530,20 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
+#: template-parts/header/header-search-form.php:41
+msgid "Search for products...."
+msgstr ""
+
 #: includes/classes/class-breadcrumb.php:147
 msgid "Search results for &#39;"
 msgstr ""
 
-#: template-parts/page-title.php:96
+#: template-parts/page-title.php:94
 msgid "Search Results for: "
 msgstr ""
 
-#: includes/classes/class-helper.php:262 includes/classes/class-helper.php:328
-msgid "Secondary"
+#: includes/classes/class-helper.php:314
+msgid "Section Background"
 msgstr ""
 
 #: includes/admin/templates/theme-activation.php:80
@@ -477,7 +554,11 @@ msgstr ""
 msgid "Select License  Certificate & Purchase code."
 msgstr ""
 
-#: includes/admin/templates/server-status.php:104
+#: comments.php:80
+msgid "Send Comment"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:106
 msgid "Server Setting"
 msgstr ""
 
@@ -486,15 +567,47 @@ msgstr ""
 msgid "Server Status"
 msgstr ""
 
-#: template-parts/contents/content-single.php:54
+#: includes/classes/class-post-helper.php:219
+msgid "Share on Facebook"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:234
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:229
+msgid "Share on Pinterest"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:239
+msgid "Share on Reddit"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:249
+msgid "Share on Telegram"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:224
+msgid "Share on Twitter"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:244
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: includes/classes/class-post-helper.php:168
 msgid "Share:"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:227
+#: includes/classes/class-woocommerce.php:258
+msgid "Shopping Cart"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:229
 msgid "SimpleXML"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:29
+#: includes/admin/templates/server-status.php:31
 msgid "Site Url"
 msgstr ""
 
@@ -502,6 +615,10 @@ msgstr ""
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
+msgstr ""
+
+#: 404.php:25
+msgid "Sorry, the page you're"
 msgstr ""
 
 #: includes/admin/templates/welcome.php:52
@@ -516,17 +633,16 @@ msgstr ""
 msgid "Step 3"
 msgstr ""
 
-#: template-parts/contents/content-single.php:47
+#: includes/classes/class-woocommerce.php:310
+msgid "Subtotal"
+msgstr ""
+
+#: template-parts/contents/content-single.php:60
 msgid "Tags:"
 msgstr ""
 
-#. Name of the theme
-#: template-parts/header/header-default.php:15
-msgid "Grozomart"
-msgstr ""
-
-#: includes/library/required-plugin.php:24
-msgid "Grozomart Toolkit"
+#: includes/classes/class-helper.php:304
+msgid "Text"
 msgstr ""
 
 #: includes/admin/templates/theme-activation.php:47
@@ -537,38 +653,42 @@ msgstr ""
 msgid "Thanks For Purchasing"
 msgstr ""
 
-#: 404.php:16
-msgid "The page you are looking for does not exist or has been moved"
-msgstr ""
-
 #: maintenance.php:14
 msgid "The site is currently down for maintenance"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:77
+#: includes/classes/class-helper.php:289
+msgid "Theme"
+msgstr ""
+
+#: includes/classes/class-helper.php:294
+msgid "Theme 2"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:79
 msgid "Theme Config"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:80
+#: includes/admin/templates/server-status.php:82
 msgid "Theme Name"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:231
+#: includes/admin/templates/server-status.php:233
 msgid ""
 "To ensure successful installation of demo content The SimpleXML extension "
 "should be installed on your web server. Please contact your hosting provider "
 "to install and activate SimpleXML extension."
 msgstr ""
 
-#: includes/admin/templates/server-status.php:149
-#: includes/admin/templates/server-status.php:171
-#: includes/admin/templates/server-status.php:193
-#: includes/admin/templates/server-status.php:218
+#: includes/admin/templates/server-status.php:151
+#: includes/admin/templates/server-status.php:173
+#: includes/admin/templates/server-status.php:195
+#: includes/admin/templates/server-status.php:220
 msgid "To see how you can change this please read this guide"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:33
-#: includes/admin/templates/server-status.php:84
+#: includes/admin/templates/server-status.php:35
+#: includes/admin/templates/server-status.php:86
 msgid "Version"
 msgstr ""
 
@@ -576,9 +696,8 @@ msgstr ""
 msgid "Version - "
 msgstr ""
 
-#: template-parts/contents/content.php:54
-#: template-parts/contents/content.php:55
-msgid "View Product"
+#: includes/classes/class-woocommerce.php:315
+msgid "View Cart"
 msgstr ""
 
 #: maintenance.php:15
@@ -611,26 +730,50 @@ msgstr ""
 msgid "Where Can I Find My Purchase Code?"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:22
+#: includes/classes/class-helper.php:324
+msgid "White"
+msgstr ""
+
+#: woocommerce.php:188
+msgid "Widget price filter"
+msgstr ""
+
+#: includes/library/required-plugin.php:41
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/admin/templates/server-status.php:24
 msgid "WordPress Setting"
 msgstr ""
 
-#: comments.php:64
-msgid "Write Comment"
+#: comments.php:76
+msgid "Write comment"
 msgstr ""
 
-#: includes/admin/templates/server-status.php:128
+#: includes/admin/templates/server-status.php:130
 msgid ""
 "You cannot upload images, themes, and plugins that have a size bigger than "
 "this value."
 msgstr ""
 
-#: includes/classes/class-comment-walker.php:76
+#: includes/classes/class-woocommerce.php:302
+msgid "Your cart is empty"
+msgstr ""
+
+#: includes/classes/class-comment-walker.php:84
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:55
-msgid "Your Email"
+#: comments.php:75
+msgid "Your Comment*"
+msgstr ""
+
+#: comments.php:61
+msgid "Your email"
+msgstr ""
+
+#: comments.php:73
+msgid "Your email address will not be published. Required fields are marked *"
 msgstr ""
 
 #: includes/admin/templates/theme-activation.php:34
@@ -641,8 +784,8 @@ msgstr ""
 msgid "Your Envato Username"
 msgstr ""
 
-#: comments.php:54
-msgid "Your Name"
+#: comments.php:57
+msgid "Your name"
 msgstr ""
 
 #: includes/admin/templates/theme-activation.php:48

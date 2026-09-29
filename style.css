@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.2.2
+Version: 1.2.8
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -1672,6 +1672,18 @@ div.trusted-clients img {
 	width: 100%;
 	min-width: 300px;
 	overflow: hidden;
+}
+
+/* Header and footer templates are built as Elementor containers. A container
+   defaults to `flex-direction: row`, so the single header/footer widget inside
+   it sits at its own content width (flex: 0 1 auto) and the bar stops short of
+   the viewport edge. These areas are always full-width, so let that widget
+   fill the row. */
+.grozomart-site-header>.elementor>.e-con>.elementor-widget,
+.grozomart-site-footer>.elementor>.e-con>.elementor-widget {
+	flex: 1 1 100%;
+	width: 100%;
+	max-width: 100%;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -4943,6 +4955,70 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 	line-height: 1.4;
 }
 
+/* The coupon "Apply" button ships as WooCommerce's default dark grey block
+   button. Match it to the Proceed to Checkout button so the cart totals panel
+   reads as one design. */
+.wc-block-components-totals-coupon__button.contained {
+	background-color: var(--theme);
+	color: var(--white);
+	border: none;
+	border-radius: 4px;
+	padding: 15px 25px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.wc-block-components-totals-coupon__button.contained:hover:not(:disabled),
+.wc-block-components-totals-coupon__button.contained:focus:not(:disabled) {
+	background-color: var(--header);
+	color: var(--white);
+}
+
+.wc-block-components-totals-coupon__button.contained:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* Block checkout "Place Order" ships in the same default grey. Match it to
+   the cart's Proceed to Checkout button. */
+.wc-block-components-checkout-place-order-button.contained {
+	background-color: var(--theme);
+	color: var(--white);
+	border: none;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.wc-block-components-checkout-place-order-button.contained:hover:not(:disabled),
+.wc-block-components-checkout-place-order-button.contained:focus:not(:disabled) {
+	background-color: var(--header);
+	color: var(--white);
+}
+
+.wc-block-components-checkout-place-order-button.contained:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* Storzen's global `input { padding: 18px 30px }` also lands on the payment
+   method radios, stretching them into rounded rectangles. Reset them back to
+   the circular control the design expects. */
+.wc-block-components-radio-control__input {
+	width: 20px;
+	height: 20px;
+	min-width: 20px;
+	padding: 0;
+	margin: 0;
+	flex: 0 0 20px;
+}
+
 @media only screen and (max-width: 768px) {
 
 	.woocommerce table.shop_table_responsive tbody th,
@@ -5184,4 +5260,51 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 
 .shoping-feature-box-2 .icon img {
 	max-width: 33px;
+}
+
+.shop-card-items .content {
+	padding: unset;
+	border: unset;
+}
+
+a.theme-btn,
+button.theme-btn {
+	border-radius: 30px !important;
+}
+
+.elementor .shop-card-arrivals .thumb img,
+.elementor .feature-product-items img,
+.elementor .hero-image img {
+	max-width: unset;
+}
+
+.section-title-area {
+	margin-bottom: 0;
+}
+
+.comment-form-wrap .form-check .form-check-input {
+	width: 24px !important;
+	height: 24px !important;
+	padding: 0;
+}
+
+
+.woocommerce-shop .sz-compare-btn,
+.woocommerce-shop .sz-wishlist-btn,
+.product-template-default .sz-compare-btn,
+.product-template-default .sz-wishlist-btn {
+	display: none;
+}
+
+.wp-block-woocommerce-checkout.alignwide.wc-block-checkout {
+	padding-top: 0;
+	margin-top: -50px;
+}
+
+.woocommerce-dashboard .news-details-wrapper-in {
+	margin-top: 0;
+}
+
+.elementor .e-flexbox-base {
+	padding: 0 !important;
 }
