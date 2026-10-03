@@ -4,7 +4,7 @@ Theme URI: https://wp.webtend.net/grozomart
 Author: WebTend
 Author URI: https://themeforest.net/user/webtend
 Description: Webtend team presents absolutely fresh and powerful WordPress theme. It combines new technologies and functional design that helps to showcase your content in better way. This WordPress theme is developed with attention to details, so you can create effective presentation of a website easily. Enjoy building web pages with our product!
-Version: 1.2.8
+Version: 1.3.3
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License version 3.0
@@ -1138,12 +1138,16 @@ big {
 
 .widget.widget_block h2,
 .widget .widget-title {
-	margin: 0 0 18px;
+	margin: 0 0 20px;
 	padding-bottom: 0;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 1.3;
 	color: var(--header);
+}
+
+.main-sideber .single-sideber-widget .title {
+	margin-bottom: 0;
 }
 
 /* The classic markup nests the text in a span, which carries the small
@@ -1252,7 +1256,6 @@ big {
 .tagcloud a {
 	font-size: 14px !important;
 	text-transform: capitalize;
-	line-height: 1;
 	font-weight: 400;
 	padding: 8px 20px;
 	-webkit-transition: .3s;
@@ -1263,14 +1266,13 @@ big {
 	border-radius: 0;
 }
 
+/* The design lays tags out as plain inline-block links whose own
+   margin-right / margin-bottom provide the spacing. Making the container a
+   flex row added `gap` on top of those margins, so fewer tags fit per line
+   than the design intends, and stretched the last tag on each line. */
 .wp-block-tag-cloud,
 .tagcloud {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	gap: 10px;
+	display: block;
 }
 
 .grozomart-search-form {
@@ -4982,6 +4984,33 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 	cursor: not-allowed;
 }
 
+/* Empty-cart "Go to Store" button. It is a core button block, so it ships in
+   WordPress's default grey; match the theme's other WooCommerce buttons. */
+.wc-block-cart__empty-cart__button .wp-block-button__link,
+.wp-block-woocommerce-empty-cart-block .wp-block-button__link {
+	background-color: var(--theme);
+	color: var(--white);
+	border: none;
+	border-radius: 30px;
+	padding: 15px 32px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.4;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.wc-block-cart__empty-cart__button .wp-block-button__link:hover,
+.wp-block-woocommerce-empty-cart-block .wp-block-button__link:hover {
+	background-color: var(--header);
+	color: var(--white);
+}
+
+/* The heading above it sits tight against the button without this. */
+.wp-block-woocommerce-empty-cart-block .wp-block-buttons {
+	margin-top: 26px;
+}
+
 /* Block checkout "Place Order" ships in the same default grey. Match it to
    the cart's Proceed to Checkout button. */
 .wc-block-components-checkout-place-order-button.contained {
@@ -5241,21 +5270,6 @@ body.woocommerce-page .wc-block-components-quantity-selector input.wc-block-comp
 	height: auto;
 }
 
-/* .news-details-content ul:not([class*="wc-block"]):not([class*="wp-block"]),
-.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"]) {
-	display: block;
-	list-style-type: disc;
-	padding-left: 2rem;
-}
-
-.news-details-content ul:not([class*="wc-block"]):not([class*="wp-block"])>li,
-.comments-area ul:not([class*="wc-block"]):not([class*="wp-block"])>li {
-	list-style-type: disc;
-}
-
-.wp-block-woocommerce-empty-cart-block .wp-block-heading+.wc-block-grid {
-	margin-top: 30px;
-} */
 
 
 .shoping-feature-box-2 .icon img {
@@ -5296,6 +5310,65 @@ button.theme-btn {
 	display: none;
 }
 
+/* Storzen's wishlist button ships two hearts - an outline one and a filled
+   one it swaps to once the product is saved - and hides the filled one with
+   `.sz-wishlist-btn__icon--filled { display: none }`. Font Awesome's own
+   `.fas { display: inline-block }` has the same specificity (0,1,0) and
+   loads after it, so the filled heart won the cascade and both showed at
+   once. Re-assert the swap at a higher specificity. */
+.sz-wishlist-btn .sz-wishlist-btn__icon--filled {
+	display: none;
+}
+
+.sz-wishlist-btn.is-added .sz-wishlist-btn__icon {
+	display: none;
+}
+
+.sz-wishlist-btn.is-added .sz-wishlist-btn__icon--filled {
+	display: inline-block;
+}
+
+/* After an AJAX add to cart WooCommerce appends its own "View cart" link.
+   It carries only `.added_to_cart .wc-forward`, so it picks up the generic
+   full-size WooCommerce button styling (52px tall, 16px text, 5px radius)
+   and sits noticeably larger than the card's compact `.theme-btn.small-btn`
+   beside it. Match the card button instead, scoped to product cards so the
+   full-size "View cart" on cart/checkout pages is untouched. */
+.shop-card-items a.added_to_cart,
+.shop-card-arrivals a.added_to_cart,
+.shop-card-arrivals-items2 a.added_to_cart,
+.feature-product-items a.added_to_cart,
+.feature-product-items-2 a.added_to_cart,
+.shop-best-seller-items a.added_to_cart,
+body.woocommerce .shop-card-items a.added_to_cart,
+body.woocommerce-page .shop-card-items a.added_to_cart {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 20px;
+	font-size: 13px;
+	font-weight: 600;
+	border-radius: 30px;
+	background-color: var(--theme);
+	color: var(--white);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+/* The generic rule also pins an arrow via ::after; the card button has none. */
+.shop-card-items a.added_to_cart::after,
+.shop-card-arrivals a.added_to_cart::after,
+.shop-card-arrivals-items2 a.added_to_cart::after,
+.feature-product-items a.added_to_cart::after,
+.feature-product-items-2 a.added_to_cart::after,
+.shop-best-seller-items a.added_to_cart::after,
+body.woocommerce .shop-card-items a.added_to_cart::after,
+body.woocommerce-page .shop-card-items a.added_to_cart::after {
+	content: none;
+}
+
 .wp-block-woocommerce-checkout.alignwide.wc-block-checkout {
 	padding-top: 0;
 	margin-top: -50px;
@@ -5307,4 +5380,12 @@ button.theme-btn {
 
 .elementor .e-flexbox-base {
 	padding: 0 !important;
+}
+
+.add_to_cart_button.ajax_add_to_cart.added {
+	display: none;
+}
+
+.shop-list-items-area-2 .thumb img {
+	max-width: 203px;
 }

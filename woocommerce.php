@@ -65,10 +65,12 @@ else :
 
     /**
      * The results partial is shared with the Shop widget, so it reads widget
-     * settings. Supply the same keys with sensible defaults for this page.
+     * settings. Supply the same keys, taking the ones the theme options
+     * expose (Shop > Product Per page) from there so this page honours the
+     * same setting WooCommerce's own loop does.
      */
     $settings = [
-        'layout_two_limit'             => 12,
+        'layout_two_limit'             => max(1, (int) \GrozomartTheme\Classes\Grozomart_Helper::get_option('product_loop_per_page', 9)),
         'layout_two_default_orderby'   => 'menu_order',
         'layout_two_default_view'      => 'grid',
         'layout_two_show_result_count' => 'yes',

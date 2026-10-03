@@ -86,6 +86,18 @@ if (is_page() && ! is_home()) {
 	if ('default' !== $product_breadcrumb) {
 		$breadcrumb = $product_breadcrumb;
 	}
+
+	/**
+	 * Theme Options > Shop > Hide Page Title drops this whole banner on single
+	 * products, leaving the breadcrumb that the Shop Details widget renders
+	 * inside the product layout as the only one on the page.
+	 *
+	 * Checked after the per-product metabox so an explicit "Enable" there can
+	 * still bring the banner back for one product.
+	 */
+	if ('default' === $product_page_title && Helper::get_option('product_hide_page_title', false)) {
+		$active_title = 'disabled';
+	}
 }
 
 if (is_home()) {
