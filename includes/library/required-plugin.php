@@ -38,6 +38,11 @@ function grozomart_register_required_plugins()
 			'required' => false,
 		],
 		[
+			'name'     => esc_html__('Storzen', 'grozomart'),
+			'slug'     => 'storzen',
+			'required' => false,
+		],
+		[
 			'name'     => esc_html__('One Click Demo Import', 'grozomart'),
 			'slug'     => 'one-click-demo-import',
 			'required' => false,
