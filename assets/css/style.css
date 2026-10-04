@@ -331,16 +331,25 @@ span {
   font-family: "TikTok Sans", sans-serif;
 }
 
-.mean-container .mean-nav ul li a:hover {
-  color: var(--theme);
+/* The offcanvas panel is painted in --theme, so colouring the link with
+   --theme on hover made the text exactly the background colour and it
+   disappeared. On touch the hover state sticks after a tap, which is why the
+   item vanished on the device. Use the accent colour instead, and give the
+   current page the same treatment so it is identifiable. */
+.mean-container .mean-nav ul li a:hover,
+.mean-container .mean-nav ul li a:focus {
+  color: var(--theme2);
+}
+
+.mean-container .mean-nav ul li.current-menu-item > a,
+.mean-container .mean-nav ul li.current_page_item > a,
+.mean-container .mean-nav ul li.current-menu-ancestor > a,
+.mean-container .mean-nav ul li.current-menu-parent > a {
+  color: var(--theme2);
 }
 
 .mean-container .mean-nav ul li a:last-child {
   border-bottom: 0;
-}
-
-.mean-container .mean-nav ul li a:hover {
-  color: var(--theme);
 }
 
 .mean-container .mean-nav ul li a.mean-expand {
@@ -461,6 +470,24 @@ span {
   background-color: var(--theme2);
   opacity: 1;
   transition: all 0.24s ease-out 0s;
+}
+
+/* The custom cursor follows the pointer, so it has nothing to track on a
+   touch device - and because it sits above the offcanvas menu
+   (z-index 10000000/10000001 vs the panel's 9999999) its translucent green
+   disc washes out whatever menu item it happens to rest on. Hide it where
+   there is no fine pointer, and on small screens as a width-based fallback
+   for browsers that do not support the pointer query. */
+@media (hover: none), (pointer: coarse) {
+  .mouseCursor {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .mouseCursor {
+    display: none !important;
+  }
 }
 
 .cursor-inner span {
